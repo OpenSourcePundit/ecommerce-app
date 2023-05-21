@@ -1,41 +1,39 @@
 import "./App.css";
-import logo from "./logo.png";
+import MockAPI from "./pages/mockman";
+import  {HomePage}  from "./pages/homepage";
+import {Routes,Route} from 'react-router-dom';
+import ProductListingPage from "./pages/productlistingpage";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} alt="mockBee logo" width="180" height="180" />
-        <h1 className="brand-title">
-          Welcome to <span>mockBee!</span>
-        </h1>
-        <p className="brand-description">
-          Get started by editing <code>src/App.js</code>
-        </p>
-        <div className="links">
-          <a
-            href="https://mockbee.netlify.app/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Explore mockBee
-          </a>
-          <a
-            href="https://mockbee.netlify.app/docs/api/introduction"
-            target="_blank"
-            rel="noreferrer"
-          >
-            API Documentation
-          </a>
-          <a
-            href="https://github.com/neogcamp/mockBee"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Contribute
-          </a>
+       <h3 className="shashank">Shashank</h3>
+       <div className="grid-child container-below-top">
+                <div className="mod-custom custom banner-overlay" id="mod-custom238">
+                      <div className="overlay">
+                            <div className="ms-3 navbar-brand navbar-brand d-flex justify-content-between d-none d-md-block">
+                               <a className="brand-logo text-decoration-none" href="/index.php">
+    	                         <span className="fw-bold" title="web-eau.net">web-eau.net</span>
+  	                           </a>
+	                            <div className="site-description px-2">
+                              <span className="small fst-italic">(prononcez web honnête)</span>
+                              </div>
+                              <img className="fs-3" src="/images/svg/ukrTrident.svg" alt="Ukraine Support" title="web-eau.net stands with Ukraine" width="21" height="35" loading="lazy"/>
+                           </div>
+                       </div>
+                 </div>
         </div>
-      </header>
+       
+       <Routes>
+          <Route path="/" element={<HomePage/>}/>
+          <Route path="/products" element={<ProductListingPage/>}/>
+          <Route path="/Mockapi" element={<MockAPI/>}/>
+          <Route path="/Mockapi" element={<MockAPI/>}/>
+          <Route path="/Mockapi" element={<MockAPI/>}/>
+          <Route path="/Mockapi" element={<MockAPI/>}/>
+          <Route path="/Mockapi" element={<MockAPI/>}/>
+
+       </Routes>
     </div>
   );
 }
