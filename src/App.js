@@ -28,10 +28,10 @@ function App() {
           <Route path="/" element={<HomePage/>}/>
           <Route path="/products" element={<ProductListingPage/>}/>
           <Route path="/Mockapi" element={<MockAPI/>}/>
-          <Route path="/Mockapi" element={<MockAPI/>}/>
-          <Route path="/Mockapi" element={<MockAPI/>}/>
-          <Route path="/Mockapi" element={<MockAPI/>}/>
-          <Route path="/Mockapi" element={<MockAPI/>}/>
+          <Route path="/signup" element={<Signup/>}/>
+          <Route path="/login" element={<Login/>}/>
+          <Route path="/cart" element={<Cart/>}/>
+          <Route path="/wishlist" element={<Wishlist/>}/>
 
        </Routes>
     </div>
