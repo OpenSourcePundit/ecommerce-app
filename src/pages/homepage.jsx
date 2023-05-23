@@ -4,6 +4,7 @@ import { useState,useEffect,React} from "react";
 export function HomePage() {
     const [products,setProduct] = useState();
     const [category,setCategory] = useState([]);
+    
 
     
 
@@ -12,7 +13,12 @@ export function HomePage() {
         try {
           fetch("/api/categories")
           .then(response => response.json())
-        .then(data => setCategory(data.categories));          
+        .then(data => setCategory(data.categories));
+        
+        // fetch("/api/products")
+        //   .then(response => response.json())
+        // .then(data => setCategory(data.products.products));
+               
         } catch (e) {
           console.error(e);
         }
@@ -20,6 +26,7 @@ export function HomePage() {
 
       useEffect(() => {
         getData();
+        console.log(category);   
       }, []);
 
     return(

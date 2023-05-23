@@ -42,4 +42,5 @@ export const categories = [
     description:
       "Meant tooften make use of supernatural and paranormal elements in morbid stories that are sometimes a little too realistic.",
   }
-];
+ 
+];  
