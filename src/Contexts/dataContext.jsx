@@ -1,7 +1,8 @@
 import axios from "axios";
-import {createContext, useEffect, useReducer} from "react";
 import {dataReducer} from "../Reducer/DataReducer";
+import {createContext, useEffect, useReducer} from "react";
 export const DataContext = createContext();
+
 
 export const DataProvider = ({children})=>{
     const initialState = {

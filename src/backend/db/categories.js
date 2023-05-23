@@ -17,28 +17,10 @@ export const categories = [
     categoryName: "non-fiction",
     description:
       "Non-fiction is writing that gives information or describes real events, rather than telling a story.",
-  },
+  },  
   {
     _id: uuid(),
-    categoryName: "horror",
-    description:
-      "Meant to cause discomfort and fear for both the character and readers, horror wat are sometimes a little too realistic.",
-  },
-  {
-    _id: uuid(),
-    categoryName: "Suspense",
-    description:
-      "Meant to cause discomfort and fear for both the character and readers, hhat are sometimes a little too realistic.",
-  },
-  {
-    _id: uuid(),
-    categoryName: "Thriller",
-    description:
-      "Meant to cause discomfort and fear for b of supernatural and paranormal elements in morbid stories that are sometimes a little too realistic.",
-  },
-  {
-    _id: uuid(),
-    categoryName: "Self-Help",
+    categoryName: "self-help",
     description:
       "Meant tooften make use of supernatural and paranormal elements in morbid stories that are sometimes a little too realistic.",
   }

@@ -18,7 +18,7 @@ export const products = [
     title: "You are Winner",
     author: "Junaid Qureshi",
     price: "3000",
-    categoryName: "horror",
+    categoryName: "self-help",
   },
   {
     _id: uuid(),
