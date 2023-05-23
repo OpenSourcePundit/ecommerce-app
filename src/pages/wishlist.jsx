@@ -1,4 +1,4 @@
-export default function Wishlist () {
+export function Wishlist () {
     return(
         <div>
             <h1>wishlist</h1>

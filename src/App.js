@@ -6,7 +6,8 @@ import  {Wishlist}  from "./pages/wishlist";
 import  {Cart}  from "./pages/cart";
 import  {Login}  from "./pages/login";
 import {Routes,Route} from 'react-router-dom';
-import ProductListingPage from "./pages/product/productlistingpage";
+import {Navbar} from "./components/Navbar";
+import {ProductListingPage} from "./pages/product/productlistingpage";
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
                        </div>
                  </div>
         </div> */}
-       
+       <Navbar/>
        <Routes>
           <Route path="/" element={<HomePage/>}/>
           <Route path="/products" element={<ProductListingPage/>}/>
