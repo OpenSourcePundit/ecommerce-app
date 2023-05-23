@@ -1,14 +1,18 @@
 import "./App.css";
 import MockAPI from "./pages/mockman";
 import  {HomePage}  from "./pages/homepage";
+import  {Signup}  from "./pages/signup";
+import  {Wishlist}  from "./pages/wishlist";
+import  {Cart}  from "./pages/cart";
+import  {Login}  from "./pages/login";
 import {Routes,Route} from 'react-router-dom';
-import ProductListingPage from "./pages/productlistingpage";
+import ProductListingPage from "./pages/product/productlistingpage";
 
 function App() {
   return (
     <div className="App">
        <h3 className="shashank">Shashank</h3>
-       <div className="grid-child container-below-top">
+       {/* <div className="grid-child container-below-top">
                 <div className="mod-custom custom banner-overlay" id="mod-custom238">
                       <div className="overlay">
                             <div className="ms-3 navbar-brand navbar-brand d-flex justify-content-between d-none d-md-block">
@@ -22,7 +26,7 @@ function App() {
                            </div>
                        </div>
                  </div>
-        </div>
+        </div> */}
        
        <Routes>
           <Route path="/" element={<HomePage/>}/>
