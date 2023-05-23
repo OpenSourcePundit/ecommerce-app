@@ -32,7 +32,7 @@ export function HomePage() {
     return(
         <>
         <div className="home-page-image">
-            <img src="https://i.ibb.co/F4gnwFr/20230109210754-IMG-2258.jpg" alt="not loaded"/>
+            <img style={{maxHeight:"20rem"}} src="https://media.istockphoto.com/id/1222550815/photo/row-of-books-on-a-shelf-multicolored-book-spines-stack-in-the-foreground.jpg?s=1024x1024&w=is&k=20&c=pYHl6LmsXYhgUE9OjBW-d_gUynzSjTI8pMnILwSQm9I=" alt="not loaded"/>
         </div>
 <div className="category-grid">
     {category.map(({categoryName,description,_id})=>{return(

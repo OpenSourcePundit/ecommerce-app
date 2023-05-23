@@ -6,7 +6,7 @@ import  {Wishlist}  from "./pages/wishlist";
 import  {Cart}  from "./pages/cart";
 import  {Login}  from "./pages/login";
 import {Routes,Route} from 'react-router-dom';
-import {Navbar} from "./components/Navbar";
+import {Navbar} from "./components/navbarcomp/navbar.jsx";
 import {ProductListingPage} from "./pages/product/productlistingpage";
 
 function App() {

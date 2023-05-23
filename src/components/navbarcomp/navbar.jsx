@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import "./components/navbar/navbar.css";
+ import "./navbar.css";
 
  import { Link,useNavigate } from "react-router-dom";
 // import { useCartContext,useFilter,useWishListContext } from "../../context";
