@@ -1,115 +1,55 @@
-.navbar {
-    display: grid;
-    grid-template-columns: 2fr 3fr 2fr;
-    justify-content: space-between;
-    align-items: center;
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    left: 0;
-    z-index: 9999;
-    background-color: var(--secondary);
-    padding: 0.6rem 0rem;
+*{
+  padding: 0;
+  margin:0;
+  font-family: monospace;
+  box-sizing: border-box;
+}
+.navbar{
+  background-color: #007bff;
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  padding: 0px 25px;
+  height: 80px;
+  align-items: center;
   }
+.logo img  {
+  height:18px;
   
-  .navbar a{
-      text-decoration: none;
-      color: var(--primary);
-  }
-  
-  .navbar .top-links a{
-    color: var(--font);
-  }
+} 
+.logo {
+  text-align: left;
 
-  .nav-cart:hover{
-    color: var(--blue-text);
-  }
-
-  .nav-heart:hover{
-    color: var(--fav);
-  }
+}
+.searchbox input{
+  height: 30px;
+  width: 100%;
+  border: none; 
+  outline: none;
+  border-radius: 8px;
+  padding: 5px;  
+  font-size: 15px;
+}
+.icons{
+  text-align: right;
+}
+.icons .nav-icons{
+  color: white;
+  text-decoration: none;
+  font-size: 20px;  
+  padding:0px 10px;
+  transition: 0.6s ;
+}
+.nav-icons:hover{
+  color: black;
+}
+.links{
+  background-color: #007bff;
   
-  /* nav btn ends */
-  .logo{
-      margin-left: 2rem;
-      text-shadow: 1px 1px 4px  var(--primary);
-      letter-spacing: 0.2rem;
-  }
-  
-  
-  /* input navbar */
-  
-  
-  
-  .top-links {
-    display: flex;
-    justify-content:flex-end;
-    align-items:center;
-    margin-right: 2rem;
-  }
-  .child-ecom {
-    margin: 1rem;
-    position: relative;
-    font-size: large;
-  }
-  
-  .badgeecom {
-    border-radius: 50%;
-    position: absolute;
-    top: -0.5rem;
-    left: 0.7rem;
-    font-size: small;
-    background-color: var(--red);
-    font-weight: bold;
-    color: var(--other-secondary);
-  }
-  
-  .one {
-    padding: 0.05rem 0.2rem;
-  }
-  .two {
-    padding: 0.01rem 0.35rem;
-  }
-  
-  
-  /* nav btn */
-  .btn{
-      padding: 0.4rem 1.2rem;
-      cursor: pointer;
-      border-radius: 16px;
-      background-color: var(--buttons);
-      border: none;
-      font-weight: bold;
-  }
-  .btn:hover{
-      box-shadow: 1px 1px 4px 2px var(--primary);
-  }
-
-  .navbar .btn{
-    margin-left: 0.2rem;
-    width: fit-content;
-  }
-  
-  
-  
-  .input-field{
-      padding: 0.6rem 1.8rem;
-      border-radius: 12.8px;
-      width: 100%;
-      border: none;
-      outline: none;
-  }
-  
-  
-  .input-container {
-      display: flex;
-      position: relative;
-    }
-    .icon {
-      text-align: center;
-      position: absolute;
-      padding-left: 0.1rem;
-      top: 0.6rem;
-      left: 0.2rem;
-    }
+}
+.links a {  
+  display: block; 
+  color: white;
+  text-decoration: none;
+  padding: 5px;
+  font-size: 12px;  
+}

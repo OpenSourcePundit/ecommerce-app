@@ -1,6 +1,6 @@
 import "./App.css";
 import MockAPI from "./pages/mockman";
-import  {HomePage}  from "./pages/homepage";
+import  {HomePage}  from "./pages/home/homepage";
 import  {Signup}  from "./pages/signup";
 import  {Wishlist}  from "./pages/wishlist";
 import  {Cart}  from "./pages/cart";

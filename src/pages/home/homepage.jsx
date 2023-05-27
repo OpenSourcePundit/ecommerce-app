@@ -1,6 +1,6 @@
 import { NavLink ,Link,useNavigate} from "react-router-dom";
 import { useContext,React} from "react";
-import {dataContext} from "../../Contexts/dataContext"; 
+import {DataContext} from "../../Contexts/dataContext"; 
 
 export function HomePage() {
     // const getData = async () => {
@@ -24,13 +24,13 @@ export function HomePage() {
     //   }, []);
 
     const navigate = useNavigate();
-    const {dataDispatch,category,filterCategory} = useContext(dataContext);
+    const {dataDispatch,category,filterCategory} = useContext(DataContext);
 
     const setCategory = (categoryName) => {
 
     }
     
     return(
-        
+    <>  abhi ka homepage</>
     )
 }
