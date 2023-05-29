@@ -1,9 +1,50 @@
-import React from 'react'
-import {  useNavigate } from 'react-router-dom';
-import {AiOutlineHeart, AiFillStar} from "react-icons/ai";
-import {FaShoppingCart} from "react-icons/fa";
+import {React,useContext} from 'react'
+import {useNavigate} from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart,faCartShopping,faUser,faBars,faStar} from '@fortawesome/free-solid-svg-icons'
 
+import "./productcard.css";
 
+export const ProductCard = ({prod}) =>{
+    console.log(prod);
+    return(
+        <div className="container">
+            <div className="card">
+                <div className="img">
+                    <img src={prod.img} alt="" width="auto" height="300px" />
+                </div>
+                <div className="content">
+                    <div className="review-container">
+                        <div className="stars">
+                        <span>Reviews</span>
+                        {[1,2,3,4,5].map((i)=>
+                            i<=prod.rating ? <FontAwesomeIcon icon={faStar} style={{color: "#f08c00",}} />
+                            :<FontAwesomeIcon icon={faStar} />                        
+                        )}
+                        </div>                        
+                    </div>
+                    <h5 className="price">Rs.{prod.price}</h5>
+                    <div className="name">{prod.title}</div>
+                    <div className="description">
+                        <p>Author:{prod.author}</p>
+                        <p>Category{prod.categoryName}</p>
+                        <p>Original Price: Rs.{prod.originalPrice}</p>
+                    </div>
+                    <div className="button-container">
+                        <div className="wishlist-button">
+                            <FontAwesomeIcon icon={faHeart}/>
+                        </div>
+                        <div className="card-button">
+                            <p>Add To Cart</p>
+                            <FontAwesomeIcon icon={faCartShopping} />
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
 // export const ProductCard = ({prod}) => {
 
 //   const navigate = useNavigate();

@@ -1,3 +1,5 @@
+
+
 export function ProductDetailsPage () {
     return(
         <div>

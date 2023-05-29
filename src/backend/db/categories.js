@@ -22,7 +22,7 @@ export const categories = [
     _id: uuid(),
     categoryName: "self-help",
     description:
-      "Meant tooften make use of supernatural and paranormal elements in morbid stories that are sometimes a little too realistic.",
+      "Meant to often make use of supernatural and paranormal elements in morbid stories .",
   }
  
 ];  
