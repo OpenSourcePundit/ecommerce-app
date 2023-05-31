@@ -5,7 +5,7 @@
 .container{
     display: grid;
     place-items: center;
-    height: 100vh;  
+    height: 60vh;  
     margin: 1em;
     font-family: "poppins";
 }

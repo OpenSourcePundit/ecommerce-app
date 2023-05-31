@@ -4,10 +4,12 @@ import  {HomePage}  from "./pages/home/homepage";
 import  {Signup}  from "./pages/signup";
 import  {Wishlist}  from "./pages/wishlist";
 import  {Cart}  from "./pages/cart";
-import  {Login}  from "./pages/login";
+
 import {Routes,Route} from 'react-router-dom';
+import {Login} from "./pages/login/login";
 import {Navbar,Footer} from "./components/navbarcomp/navbar.jsx";
 import {ProductListingPage} from "./pages/product/productlistingpage";
+import { ProductDetailsPage } from "./pages/product/productdetailspage";
 
 function App() {
   return (
@@ -31,6 +33,7 @@ function App() {
        <Routes>
           <Route path="/" element={<HomePage/>}/>
           <Route path="/products" element={<ProductListingPage/>}/>
+          <Route path="/products/:productId" element={<ProductDetailsPage/>}/>
           <Route path="/mockman" element={<MockAPI/>}/>
           <Route path="/signup" element={<Signup/>}/>
           <Route path="/login" element={<Login/>}/>

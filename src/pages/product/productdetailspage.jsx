@@ -1,9 +1,14 @@
-
+import React from "react";
+import {links,useParams} from "react-router-dom";
+import "./productdetailspage";
 
 export function ProductDetailsPage () {
+    const {productId} = useParams();
     return(
         <div>
             <h1>productdetails</h1>
+            <p>productdetails:{productId}</p>
+
         </div>
     )
 }

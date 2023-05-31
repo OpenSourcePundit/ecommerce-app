@@ -7,9 +7,14 @@ import "./productcard.css";
 
 export const ProductCard = ({prod}) =>{
     console.log(prod);
+    const navigate = useNavigate();
+
+    const productdetailsclickHandler = (prod) =>{
+        navigate(`./${prod.id}`);        
+    }
     return(
         <div className="container">
-            <div className="card">
+            <div className="card" onClick={({prod})=>productdetailsclickHandler}>
                 <div className="img">
                     <img src={prod.img} alt="" width="auto" height="300px" />
                 </div>

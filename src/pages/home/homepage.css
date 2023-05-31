@@ -56,7 +56,8 @@
 .shop-now-btn {
     width: fit-content;
     min-width: 80px;
-    padding: 10px;
+    padding: 10px 0px 10px 0px;
+    cursor: pointer;
 }
 
 
