@@ -3,7 +3,7 @@
     box-sizing: border-box;
 }
 .container{
-    display: grid;
+    display: flex;
     place-items: center;
     height: 60vh;  
     margin: 1em;
@@ -12,14 +12,15 @@
 .card{
     width: 100%;
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    max-width: auto-resize;
+
 }
 .content{
     background: #fff;
-    margin:1em;
+    margin:.2em;
 }
-.img{
-    /*background: url("../../logo.png")  center/cover;*/
-   
+.img img{
+    max-width: auto-resize;   
 }
 .review-container{
     display: flex;

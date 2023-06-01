@@ -5,18 +5,19 @@ import { faHeart,faCartShopping,faUser,faBars,faStar} from '@fortawesome/free-so
 
 import "./productcard.css";
 
-export const ProductCard = ({prod}) =>{
-    console.log(prod);
+export const ProductCard = ({prod}) =>{     
     const navigate = useNavigate();
 
-    const productdetailsclickHandler = (prod) =>{
-        navigate(`./${prod.id}`);        
+    const productdetailsclickHandler = () =>{
+        //console.log(e.target.value);
+        console.log(prod);
+        navigate(`./${prod._id}`);        
     }
     return(
         <div className="container">
-            <div className="card" onClick={({prod})=>productdetailsclickHandler}>
+            <div className="card" onClick={productdetailsclickHandler}>
                 <div className="img">
-                    <img src={prod.img} alt="" width="auto" height="300px" />
+                    <img src={prod.img} alt="" width="auto" height="200px" />
                 </div>
                 <div className="content">
                     <div className="review-container">
