@@ -3,13 +3,14 @@ import MockAPI from "./pages/mockman";
 import  {HomePage}  from "./pages/home/homepage";
 import  {Signup}  from "./pages/signup";
 import  {Wishlist}  from "./pages/wishlist";
-import  {Cart}  from "./pages/cart";
+import  {Cart}  from "./pages/cart/cart";
 
 import {Routes,Route} from 'react-router-dom';
 import {Login} from "./pages/login/login";
-import {Navbar,Footer} from "./components/navbarcomp/navbar.jsx";
-import {ProductListingPage} from "./pages/product/productlistingpage";
-import { ProductDetailsPage } from "./pages/product/productdetailspage";
+import {Navbar} from "./components/navbarcomp/navbar.jsx";
+import {Footer} from "./components/footer/footer.jsx";
+import {ProductListingPage} from "./pages/product/productlistingpage/productlistingpage";
+import {ProductDetailsPage } from "./pages/product/productdetailspage/productdetailspage";
 
 function App() {
   return (

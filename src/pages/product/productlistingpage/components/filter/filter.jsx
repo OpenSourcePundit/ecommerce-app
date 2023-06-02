@@ -1,6 +1,6 @@
 import React from "react";
 import {useContext, useState} from "react";
-import { DataContext } from "../../Contexts/data/dataContext";
+import { DataContext } from "../../../../../Contexts/dataContext";
 export const ProductFilter = () => {
   const [filteredData, setFilteredData] = useState([]);
   const ratingArray = [1, 2, 3, 4];

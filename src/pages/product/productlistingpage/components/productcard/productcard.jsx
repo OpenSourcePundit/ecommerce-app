@@ -14,41 +14,40 @@ export const ProductCard = ({prod}) =>{
         navigate(`./${prod._id}`);        
     }
     return(
-        <div className="container">
+        // <div className="container">
             <div className="card" onClick={productdetailsclickHandler}>
+
                 <div className="img">
-                    <img src={prod.img} alt="" width="auto" height="200px" />
+                    <img src={prod.image} alt="" width="auto" height="200px" />
                 </div>
                 <div className="content">
                     <div className="review-container">
                         <div className="stars">
                         <span>Reviews</span>
                         {[1,2,3,4,5].map((i)=>
-                            i<=prod.rating ? <FontAwesomeIcon icon={faStar} style={{color: "#f08c00",}} />
+                            i<=prod.rating ? < FontAwesomeIcon icon={faStar} style={{color: "#f08c00",}} />
                             :<FontAwesomeIcon icon={faStar} />                        
                         )}
                         </div>                        
                     </div>
-                    <h5 className="price">Rs.{prod.price}</h5>
+                    <h5 className="price">Rs.{prod.newPrice}</h5>
                     <div className="name">{prod.title}</div>
                     <div className="description">
                         <p>Author:{prod.author}</p>
                         <p>Category{prod.categoryName}</p>
-                        <p>Original Price: Rs.{prod.originalPrice}</p>
+                        <p>Original Price: Rs.{prod.price}</p>
                     </div>
-                    <div className="button-container">
-                        <div className="wishlist-button">
-                            <FontAwesomeIcon icon={faHeart}/>
-                        </div>
-                        <div className="card-button">
-                            <p>Add To Cart</p>
-                            <FontAwesomeIcon icon={faCartShopping} />
-                            
-                        </div>
+                    <div className="button-container">                        
+                        <button className="cart-button">
+                            <span>Add To Cart<FontAwesomeIcon icon={faCartShopping} /></span>
+                        </button>  
+                <button className="wishlist-button"> <FontAwesomeIcon icon={faHeart}/></button>
+
                     </div>
                 </div>
+
             </div>
-        </div>
+        // </div>
     )
 }
 // export const ProductCard = ({prod}) => {

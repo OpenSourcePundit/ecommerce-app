@@ -27,10 +27,27 @@ export function HomePage() {
 
     const navigate = useNavigate();
     const {dataDispatch,category,filterCategory,products} = useContext(DataContext);
-
-    const setCategory = (categoryName) => {
-    }
     
+    const categoryHandler = (categoryName) =>{
+   
+      dataDispatch({
+        type:"Filter-Categories",
+        payload: categoryName
+      })
+      navigate("/products")
+    }
+  
+    const handleShowBtn = () =>{
+      dataDispatch({
+        type:"show_btn",
+        payload: "All"
+      })
+  
+      navigate('/products');
+    }
+
+
+
     return(
         <div className="home-container">
           <div className="home-img-container">
@@ -45,7 +62,7 @@ export function HomePage() {
                   <h1 className="main-text-title">Reading Needs</h1>
                 </div>
                 <Link to="/products">
-                  <button className="link-btn shop-now-btn">SHOP NOW</button>
+                  <button className="link-btn shop-now-btn" onClick={handleShowBtn}>SHOP NOW</button>
                 </Link>
               </div>
             </div>
@@ -66,7 +83,7 @@ export function HomePage() {
                   category.map(({ _id, categoryName, description }) => {
                     return (
                       <div className="box" key={_id} 
-                    //   onClick={() => categoryHandler(categoryName)}
+                         onClick={() => categoryHandler(categoryName)}
                       >
                         <div className="detail-box text-center">
                           <h4>{categoryName}</h4>
