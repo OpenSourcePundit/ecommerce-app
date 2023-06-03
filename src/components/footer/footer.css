@@ -1,0 +1,48 @@
+.footer{
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    background-color: black;
+  }
+ .footer-section{
+      width: 60%;
+      margin: 0px auto;
+      padding-top: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+ }
+ .footer-left-section{
+        display: flex;
+        flex-direction: column;
+        color: #fff;
+ }
+ .footer-left-section h2{
+          text-transform: uppercase;
+          padding: 1rem 0;
+          letter-spacing: 2px;
+        }
+.footer-left-section p{
+          font-size: .5rem;
+          padding-bottom: 0.2rem;
+        }
+.contact-section{
+        display: flex;
+        flex-direction: column;
+        color: #fff;
+}
+.contact-section h3{
+          padding: 1rem 0;
+          letter-spacing: 2px;
+          text-align: center;
+        }
+.contact{
+          display: flex;
+          justify-content: space-around;
+}
+.contact a{
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            padding: 0px 0.5rem;
+          }

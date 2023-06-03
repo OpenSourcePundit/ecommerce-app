@@ -55,12 +55,4 @@ export function Navbar() {
     
   );
 };
-export function Footer(){
-  return(
-    <footer className="footer">
-      <div className="footer-content">
-        <p>Copyright © 2023</p>
-      </div>
-    </footer>
-  )
-}
+
