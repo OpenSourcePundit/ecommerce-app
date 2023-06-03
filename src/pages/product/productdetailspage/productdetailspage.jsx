@@ -1,22 +1,109 @@
 import React from "react";
-import {links,useParams} from "react-router-dom";
-import "./productdetailspage";
+import {useParams} from "react-router-dom";
+import { useContext } from "react";
+import { DataContext } from "../../../Contexts/dataContext";
+import { AiFillStar, AiOutlineShoppingCart, AiOutlineHeart } from "react-icons/ai";
+import { BsTagFill, BsLightningFill } from "react-icons/bs";
+import "./productdetailspage.css";
 
-export function ProductDetailsPage () {
-    const {productId} = useParams();
-    return(
-        <div className="main-page-container">
-            <div className="main-container">
-                <div className="product-image-container">
 
+export const ProductDetailsPage = () => {
+  const { productId } = useParams();
+  const { products } = useContext(DataContext);
+
+
+  const handleWishlist = ()=>{
+    console.log("Wishlist");
+  }
+  
+  const product = products.find((prod) => prod._id === productId);
+  
+  console.log ("pro",product._id,"proID",productId)
+
+  const {
+    _id, title, author, image, price, newPrice, discount,
+    Pages, Language, rating, categoryName, cashOnDelivery,
+    fastDelivery,
+  } = product;
+  return (
+    <div className="product-page-container" key={_id} >
+      <div className="product-page-main">
+        <div className="main-sections">
+          <div className="image-container">
+            <img src={image} />
+          </div>
+          <div className="details-container">
+            <div className="title">
+              <h3>{title}</h3>
+            </div>
+            <div className="rating">
+              <h4>{rating}</h4>
+              <h5>
+                <AiFillStar />
+              </h5>
+            </div>
+            <div className="price-details">
+              <div className="cprice">
+                <h4>₹{newPrice} </h4>
+              </div>
+              <div className="oprice">
+                <h4>₹{price}</h4>
+              </div>
+              <div className="discount">
+                <h4>({discount}% OFF)</h4>
+              </div>
+            </div>
+            <div className="few-left">
+              
+                <p>
+                  <BsLightningFill />
+                </p>
+                <h5> Hurry, Only Few Left</h5>
+              
+            </div>
+            
+            <div className="tag-section">
+                <div className="tag">
+                    <h5><BsTagFill/></h5><p>FastDelivery {fastDelivery ?"Available":"Unavailabe" }</p>
                 </div>
-                <div className="product-details-container">
+                <div className="tag">
+                    <h5><BsTagFill/></h5><p>Inclusive of All Taxes</p>
+                </div>
+                <div className="tag">
+                    <h5><BsTagFill/></h5><p>Cash On Delivery {cashOnDelivery ?"Available":"Unavailabe" }</p>
+                </div>
+            </div>
+            <div className="page-section">
+                <h5>Pages: <span>{Pages}</span></h5>
+            </div>
+            
+            <div className="highlights-section">
+                <div className="highlight">
+                    
+                        <p className="auth">Author: </p>
+                        <p className="cate">{author}</p>
+                    
+                </div>
+                <div className="highlight">
+                    
+                        <p className="auth">Category: </p>
+                        <p className="cate">{categoryName}</p>
+                    
+                </div>
+                <div className="highlight">
+                    
+                        <p className="auth">Language: </p>
+                        <p className="cate">{Language}</p>
                     
                 </div>
             </div>
-            <h1>productdetails</h1>
-            <p>productdetails:{productId}</p>
-
+          </div>
         </div>
-    )
-}
+        <div className="buttons">
+            <button className="btn"><AiOutlineShoppingCart/> <span>Add to Cart</span> </button> 
+            <button className="btn" ><AiOutlineHeart/> <span>Add to Wishlist</span> </button>   
+        </div>
+      </div>
+    </div>
+  );
+};

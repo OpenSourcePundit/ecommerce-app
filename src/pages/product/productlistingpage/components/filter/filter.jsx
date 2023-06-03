@@ -1,6 +1,8 @@
 import React from "react";
 import {useContext, useState} from "react";
 import { DataContext } from "../../../../../Contexts/dataContext";
+import "./filter.css";
+
 export const ProductFilter = () => {
   const [filteredData, setFilteredData] = useState([]);
   const ratingArray = [1, 2, 3, 4];
@@ -30,14 +32,13 @@ export const ProductFilter = () => {
   return (
     
     <div className="filter-container">
-      {/* {console.log(activeFilterCategory)} */}
       <div className="filter">
         <h3>Filter</h3>
       </div>
       <div className="price-range">
         <label htmlFor="" ><h4>Price</h4></label>
-        {/* <input type="range" min={100} max={1500} onChange={(e)=> {return  priceRange=(e.target.value)}}   /> */}
-        <input type="range" min={100} max={1500} value={priceRange} onChange={(e)=> {dataDispatch({
+         <input type="range" min={1} max={1000} value={priceRange} onChange={(e)=> 
+         {dataDispatch({
           type:"filterPrice",
           payload: e.target.value,
         })}}  

@@ -1,1 +1,37 @@
 
+
+.product-container{
+    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    background-color: rgb(225, 229, 236);
+}
+    
+.product-container .product-list-section{
+        width: 85%;
+        display: flex;
+        flex-direction: column;
+        padding: 2rem 1rem;
+}
+
+.product-container.product-header{
+            height: 40px;
+            padding: 1rem 0 1rem 2rem;
+            display: flex;
+            align-items: center;
+            font-family: Roboto;
+            letter-spacing: 1px;
+}
+
+.product-container.product-headerspan{
+                font-weight: 400;
+                font-size: 14px;
+                margin-left: 5px;
+}
+.product-container.product-section{
+            display: flex;
+            flex-wrap: wrap;
+}
+
+
