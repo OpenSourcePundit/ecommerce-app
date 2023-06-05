@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { DataContext } from "../../../Contexts/dataContext";
 import { AiFillStar, AiOutlineShoppingCart, AiOutlineHeart } from "react-icons/ai";
 import { BsTagFill, BsLightningFill } from "react-icons/bs";
-import "./productdetailspage.css";
+import "./productdetailspage.scss";
 
 
 export const ProductDetailsPage = () => {

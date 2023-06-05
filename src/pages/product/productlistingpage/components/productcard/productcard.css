@@ -16,7 +16,7 @@
     background-color: #fff;
     position: relative;
 }
-.container:hover{
+.card:hover{
     transform: scale(1.02);
 }
 
