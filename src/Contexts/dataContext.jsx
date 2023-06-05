@@ -1,23 +1,25 @@
 import axios from "axios";
+import {createContext, useEffect, useReducer, useState} from "react";
 import {dataReducer} from "../Reducer/DataReducer";
-import {createContext, useEffect, useReducer} from "react";
+
 export const DataContext = createContext();
-
-
 export const DataProvider = ({children})=>{
+
     const initialState = {
         sortBy: "",
         priceRange: 1500,
         category: [],
         rating: 0,
         products: [],
-        allProducts: [],
         cart: [],
+        cartLength:0,
         wishlist: [],
-        address: [],
+        wishlistLength:0,
         search: "",
         filterCategory:["Fiction", "Non-Fiction", "self-help"],
         activeFilterCategory: [],
+        isLoggedIn:false,
+        address:[{Add_name:"Shashank", Hno:"11/B", street:"AzadNagar", city:"Etawah", state:"Uttar pradesh", Pin:"206242", Phone:"8130221540"}]
       };
       const [state, dispatch] = useReducer(dataReducer, initialState);
       
@@ -28,7 +30,9 @@ export const DataProvider = ({children})=>{
                 type:"Add_Category",
                 payload:category.categories
             })
+
             const {data: product} = await axios.get("/api/products");
+            // console.log(product.products);
             dispatch({
                 type:"Add_Product",
                 payload:product.products
@@ -37,7 +41,7 @@ export const DataProvider = ({children})=>{
         catch(err){
             console.log(err);
         }
-      }      
+      }
       useEffect(()=>{
         getData();
       },[]);
@@ -50,14 +54,17 @@ export const DataProvider = ({children})=>{
             priceRange: state.priceRange,
             category: state.category,
             products: state.products,
-            allProducts: state.allProducts,
             dataDispatch: dispatch,
             cart: state.cart,
+            cartLength: state.cartLength,
             wishlist: state.wishlist,
+            wishlistLength: state.wishlistLength,
             search: state.search,
             address: state.address,
             filterCategory: state.filterCategory,
             activeFilterCategory:state.activeFilterCategory,
+            users:state.users,
+            isLoggedIn: state.isLogged,
         }}
         >
             {children}

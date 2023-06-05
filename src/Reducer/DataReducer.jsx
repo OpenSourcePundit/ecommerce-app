@@ -1,7 +1,7 @@
 export const dataReducer = (state, {type, payload})=>{
     
     //console.log("cate",state.category);
-    const{cartLength, wishlistLength} = state
+   const{cartLength, wishlistLength, isLoggedIn} = state
     
    switch(type){
        case "Add_Category":
@@ -13,14 +13,14 @@ export const dataReducer = (state, {type, payload})=>{
            return{
                ...state, products:[...state.products, ...payload]
            };
-       case "Add_to_cart":
-           return {...state, cartLength:cartLength+1, cart:[...state.cart, payload]};
+       // case "Add_to_cart":
+       //     return {...state, cartLength:cartLength+1, cart:[...state.cart, payload]};
        
        case "fetch_cart":
            return {...state, cart:[...payload], cartLength: payload.length }
 
        case "logout":
-           return {...state, cart:[], cartLength:0, wishlistLength:0, wishlist:[]}
+           return {...state, cart:[], cartLength:0, wishlistLength:0, wishlist:[], isLoggedIn:false }
 
        case "show_btn":
             //console.log(category);
@@ -55,11 +55,24 @@ export const dataReducer = (state, {type, payload})=>{
            rating: 0,
            activeFilterCategory:[],    
        }
-       case "updateCart":
+       case "handleCart":
            return{
-               ...state, cart:[...payload]
+               ...state, cart:[...payload], cartLength: payload.length
            }
+   
+       case "handleWishlist":
+           return{... state, wishlist:[...payload], wishlistLength: payload.length  } 
 
+       case "add-address":
+           return {...state, address:[...state.address, payload]}
+       
+       case "editAddress":{
+               return {...state, address:[ ...payload]}
+       }
+       case "update-address":
+           return{
+               ...state, address:[...state.address, payload]
+           }
        default:
            return state;
    }
