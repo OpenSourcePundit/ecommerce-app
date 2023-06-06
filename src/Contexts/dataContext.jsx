@@ -39,6 +39,7 @@ export const DataProvider = ({children})=>{
             })
         }
         catch(err){
+            
             console.log(err);
         }
       }
@@ -64,7 +65,7 @@ export const DataProvider = ({children})=>{
             filterCategory: state.filterCategory,
             activeFilterCategory:state.activeFilterCategory,
             users:state.users,
-            isLoggedIn: state.isLogged,
+            isLoggedIn: state.isLoggedIn,
         }}
         >
             {children}

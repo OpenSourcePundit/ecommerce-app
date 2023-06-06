@@ -40,7 +40,7 @@ export function Navbar() {
       <div className="icons">
         <a href="/wishlist" className="nav-icons"><FontAwesomeIcon icon={faHeart} /></a>
         <a href="/cart" className="nav-icons"><FontAwesomeIcon icon={faCartShopping} /></a>
-        <a href="/login" className="nav-icons"><FontAwesomeIcon icon={faUser} /></a>
+        <a href="/profile" className="nav-icons"><FontAwesomeIcon icon={faUser} /></a>
         <a href="" className="nav-icons"><FontAwesomeIcon icon={faBars} /></a>
       </div>
       </nav>

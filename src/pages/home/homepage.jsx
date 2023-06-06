@@ -1,6 +1,7 @@
 import { NavLink ,Link,useNavigate} from "react-router-dom";
 import { useContext,React} from "react";
 import {DataContext} from "../../Contexts/dataContext"; 
+import { AuthContext } from "../../Contexts/authcontext/authcontext";
 import booklogo from "../../biblioteclogo.png" 
 
 import "./homepage.css";
@@ -27,7 +28,7 @@ export function HomePage() {
 
     const navigate = useNavigate();
     const {dataDispatch,category,filterCategory,products} = useContext(DataContext);
-    
+    const {isLogIn} =useContext(AuthContext);
     const categoryHandler = (categoryName) =>{
    
       dataDispatch({
@@ -49,7 +50,9 @@ export function HomePage() {
 
 
     return(
+      
         <div className="home-container">
+          {console.log("homepagelogincheck",isLogIn)}
           <div className="home-img-container">
             <div className="bg-img-container"></div>
             <div className="home-page-text">
