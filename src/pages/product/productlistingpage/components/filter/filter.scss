@@ -1,10 +1,13 @@
 
 .filter-container{
-    width: 15%;
+    width: 20%;
+    min-width: 200px;
+    max-width: 250px;
     background-color: #fff;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 10px;
     display: flex;
     flex-direction: column;
+    align-items: left;
     padding: 3rem 1rem 0px 2rem;
 
     >.filter >h3{
@@ -14,6 +17,7 @@
     }
 
     >.price-range{
+        width: 70%;
         display: flex;
         flex-direction: column;
         padding: 0.5rem 0;
@@ -90,6 +94,7 @@
 
     >.filter-clear{
         padding: 1rem 0;
+
         .btn{
             width: 150px;
             height: 30px;
@@ -99,6 +104,8 @@
             border: none;
             border-radius: 5px;
             letter-spacing: 2px;
+            &:hover{
+            cursor:pointer;}
         }
     }
 
