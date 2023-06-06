@@ -41,23 +41,6 @@ export const Login = () => {
       } catch (error) {
         console.log(error);
       }
-
-      try{
-        const response = await fetch("/api/user/cart",{
-          method: "GET",
-          headers: {
-            "authorization": localStorage.getItem("encodedToken"),
-          }
-        })
-        const result =  await response.json();
-        dataDispatch({
-          type:"fetch_cart",
-          payload: result.cart,
-        })
-    }
-      catch(err){
-        console.log(err);
-    }
     
     try{
       const response = await fetch("/api/user/cart",{
