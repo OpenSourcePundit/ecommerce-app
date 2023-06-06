@@ -1,7 +1,7 @@
 import React from "react";
 import {useContext, useState} from "react";
 import { DataContext } from "../../../../../Contexts/dataContext";
-import "./filter.css";
+import "./filter.scss";
 
 export const ProductFilter = () => {
   const [filteredData, setFilteredData] = useState([]);

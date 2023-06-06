@@ -6,23 +6,23 @@
     position: relative;
     background-color:rgb(235, 234, 245)
 }
-.filter{
-    width: 20%;
+
+.main .product-section{
+    width: 85%;
     display: flex;
     flex-direction: column;
-    background-color:white;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    padding: 2rem 1rem;
 }
-.product-section{
-    width: 75%;
-    display: flex;
-    flex-direction: column;
-}
-.search-result{
-    width: 100%;
+.main .product-section .search-result{
+            height: 40px;
+            padding: 1rem 0 1rem 2rem;
+            display: flex;
+            align-items: center;
+            font-family: Roboto;
+            letter-spacing: 1px;
 
 }
-.product-container{
+.main .product-section .product-container{
     width: 100%;
     height:auto;
     display: flex;

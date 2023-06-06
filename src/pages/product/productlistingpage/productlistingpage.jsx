@@ -14,12 +14,11 @@ export const ProductListingPage = () => {
     priceRange,
     rating,
     products,
-    activeFilterCategory, } = useContext(DataContext);
+    activeFilterCategory,search } = useContext(DataContext);
 
+  let searchData = products.filter((prod)=>prod.title.toLowerCase().includes(search.toLowerCase()))
 
-  //Nested filter created:
-
-  let priceFilter = products.filter((item) => item.newPrice <= priceRange);
+  let priceFilter = (search!==""?searchData:products).filter((item) => item.newPrice <= priceRange);
   let CategoryFilter =
     activeFilterCategory.length === 0
       ? priceFilter
@@ -40,24 +39,25 @@ export const ProductListingPage = () => {
       : RatingFilter.sort(function (a, b) {
           return b.newPrice - a.newPrice;
         });
+ 
 
 
   return (
     <div className="main">
-      <div className="filter">{<ProductFilter/>}</div>
+      <ProductFilter/>
       <div className="product-section">
         <div className="search-result"> {finalData.length > 0 ? (
             <>
-              <h3>Showing All Products</h3>
-              <span>({finalData.length} products)</span>
+              <h3>Showing <span>({finalData.length} products)</span></h3>
+              
             </>
           ) : (
             <h1>Sorry , Products are not available for chosen category.</h1>
           )}</div>
         <div className="product-container">
-          {finalData.map((prod) => {
+          {finalData.map((prod,index) => {
             return (
-              <ProductCard prod={prod}  />
+              <ProductCard prod={prod} index={index}  />
             );
           })}
         </div>

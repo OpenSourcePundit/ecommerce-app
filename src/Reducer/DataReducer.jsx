@@ -73,6 +73,10 @@ export const dataReducer = (state, {type, payload})=>{
            return{
                ...state, address:[...state.address, payload]
            }
+       case "HandleSearch":
+        return{
+            ...state,search:payload
+        }
        default:
            return state;
    }

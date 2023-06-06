@@ -1,104 +1,105 @@
+
 .filter-container{
-    width: 100%;
+    width: 15%;
+    background-color: #fff;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 10px;
     display: flex;
     flex-direction: column;
     padding: 3rem 1rem 0px 2rem;
-    
-}
-.filter{
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 10px;
-        display: flex;
-        flex-direction: column;
-        padding: 0;
+
+    >.filter >h3{
+        color: #212121;
+        padding: 1rem 0rem;
+        letter-spacing: 1px;
     }
-.filter .price-range{
+
+    >.price-range{
         display: flex;
         flex-direction: column;
         padding: 0.5rem 0;
-}
-.filter .price-range label{
-        padding: 0.5rem 0;
-}
+        >label{
+            padding: 0.5rem 0;
+        }
+    }
 
 
-.filter-category{
+    >.filter-category{
         display: flex;
         flex-direction: column;
-}
-.filter-category h4{
+        >h4{
             padding: 0.3rem 0;
-}
-.filter-category .category{
+        }
+        >.category{
             padding: 0.2rem 0;
             display: flex;
             flex-direction: column;
-}
-.filter-category .category li{
+            >li{
                 list-style: none;
-                text-align: left;
-}
-.filter-category .category input{
-                
-        padding: 5px;
-}
-.filter-category .category label{
-                padding-bottom: 2px;
-                font-weight: 450;
-}
-.filter-rating{
-        display: flex;
-        flex-direction: column; 
-}
-.filter-rating h4{
-            padding: 0.3rem 0;
-}
-.filter-rating h4 .rating{
-            padding: 0.2rem 0;
-            display: flex;
-            flex-direction: column;
-}
-.filter-rating h4 li{
-                list-style: none;
-}
-.filter-rating h4 input{
+            >input{
                 margin-right: 5px;
             }
-.filter-rating h4 label{
+            >label{
                 padding-bottom: 2px;
                 font-weight: 450;
                 }
-  
+            }
+        }
+    }
 
-.filter-sort{
+    >.filter-rating{
         display: flex;
         flex-direction: column; 
-}
-.filter-sort h4{
+        >h4{
             padding: 0.3rem 0;
         }
-.filter-sort div{
+          >.rating{
             padding: 0.2rem 0;
-}
-.filter-sort div input{
+            display: flex;
+            flex-direction: column;
+            >li{
+                list-style: none;
+            >input{
                 margin-right: 5px;
             }
-.filter-sort div label{
+            >label{
+                padding-bottom: 2px;
+                font-weight: 450;
+                }
+            }
+        }
+    }
+
+    >.filter-sort{
+        display: flex;
+        flex-direction: column; 
+        >h4{
+            padding: 0.3rem 0;
+        }
+        >div{
+            padding: 0.2rem 0;
+            >input{
+                margin-right: 5px;
+            }
+            >label{
                 padding-bottom: 4px;
                 font-weight: 450;
             }
 
+        }
+    }
 
-.filter-clear{
+    >.filter-clear{
         padding: 1rem 0;
-}
-.filter-clear.btn{
+        .btn{
             width: 150px;
             height: 30px;
-            background-color:beige;
-            color:blueviolet;
+            background-color:rgb(41, 92, 137);
+            color: #fff;
             font-size: 16px;
             border: none;
             border-radius: 5px;
             letter-spacing: 2px;
         }
+    }
+
+}
