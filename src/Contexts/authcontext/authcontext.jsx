@@ -4,7 +4,7 @@ import { createContext, useState } from 'react'
     export const AuthContext = createContext();
 
     export const AuthProvider = ({children})=>{
-    const [isLogIn, setIsLogIn] = useState(false);
+    const [isLogIn, setIsLogIn] = useState(localStorage.getItem("encodedToken")!=undefined);
     // localStorage.getItem("encodedToken")!=undefined
     
         return(
