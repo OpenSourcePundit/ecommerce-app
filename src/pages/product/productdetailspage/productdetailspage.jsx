@@ -26,8 +26,8 @@ export const ProductDetailsPage = () => {
   } = product;
   
   
-  const isInCart = cart.find((item)=> item._id === product._id);
-  console.log("cart", isInCart)
+  const isInCart = cart.some((item)=> item._id === product._id);
+  console.log("cart", cart,"wishlist",wishlist)
   const handleAddCart = async (prod) => {
     try {
        const prod1 = {
@@ -52,7 +52,7 @@ export const ProductDetailsPage = () => {
         console.log(error);
       }
     }
-    const isInWishlist = wishlist.find((item)=> item._id === product._id);
+    const isInWishlist = wishlist.some((item)=> item._id === product._id);
     
     
     const handleWishlist = async (prod) => {

@@ -1,6 +1,6 @@
 import "./App.css";
 import {useContext} from "react";
-import {Routes,Route,Navigate} from 'react-router-dom';
+import {Routes,Route,Navigate,useLocation} from 'react-router-dom';
 
 
 import MockAPI from "./pages/mockman";
@@ -24,7 +24,8 @@ function App() {
   
 
    const RequiresAuth = ({children, isLogIn})=>{
-     return isLogIn ? children :( <Navigate to="/login"/>)
+     const location = useLocation();
+     return isLogIn ? children :( <Navigate to="/login" state={{from:location}}  />)
    }
 
    console.log("logincheckapp",isLogIn)

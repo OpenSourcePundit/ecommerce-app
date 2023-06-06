@@ -1,10 +1,11 @@
 import { React, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { AiFillHeart, AiFillStar } from "react-icons/ai";
+import { AiFillHeart} from "react-icons/ai";
 import { FaShoppingCart } from "react-icons/fa";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { DataContext } from "../../../../../Contexts/dataContext";
+import { AuthContext} from "../../../../../Contexts/authcontext/authcontext";
 
 import "./productcard.css";
 
@@ -13,10 +14,11 @@ export const ProductCard = ({ prod }) => {
   let result = {};
   let result1 = {};
   let { dataDispatch, cart, wishlist } = useContext(DataContext);
+  const {isLogIn} = useContext(AuthContext);
 
-  const productdetailsclickHandler = () => {
-    navigate(`./${prod._id}`);
-  };
+  // const productdetailsclickHandler = () => {
+  //   navigate(`./${prod._id}`);
+  // };
 
   const isInCart = cart.some((item) => item._id === prod._id);
   const {
@@ -32,7 +34,8 @@ export const ProductCard = ({ prod }) => {
   } = prod;
 
   const handleAddCart = async (prod) => {
-    try {
+    if(isLogIn)
+    {try {
       const prod1 = {
         product: prod,
       };
@@ -46,13 +49,15 @@ export const ProductCard = ({ prod }) => {
       });
       // saving the encodedToken in the localStorage
       result = await response.json();
-      console.log(result.cart);
+      console.log("result",result.cart);
       dataDispatch({
         type: "handleCart",
         payload: result.cart,
       });
     } catch (error) {
       console.log(error);
+    }}else{
+      navigate("../login");
     }
   };
 
@@ -86,8 +91,8 @@ export const ProductCard = ({ prod }) => {
 
   return (
     // <div className="container">
-    <div className="card" onClick={productdetailsclickHandler}>
-      <div className="img">
+    <div className="card" >
+      <div className="img" onClick={()=>navigate(`./${_id}`)}>
         <img src={prod.image} alt="" width="auto" height="200px" />
       </div>
 

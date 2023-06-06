@@ -1,25 +1,23 @@
 import React from "react";
 import axios from "axios";
 import { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useLocation } from "react-router-dom";
 import { DataContext } from "../../Contexts/dataContext";
 import "./login.scss";
 import { AuthContext } from "../../Contexts/authcontext/authcontext";
 
+
 export const Login = () => {
-
+  const location = useLocation();
   const {dataDispatch,cart} = useContext(DataContext);
-  const {isLogIn, setIsLogIn, item} = useContext(AuthContext);
-  console.log("Item", item);
+  const {isLogIn, setIsLogIn,} = useContext(AuthContext);
   const navigate = useNavigate();
-
   const [email, setEmail] = useState("adarshbalika@gmail.com");
   const [password, setPassword] = useState("adarshbalika");
   console.log("loginCheck0:",isLogIn);
   
   const handleSubmit = async (e) => {
-console.log("yha pahuche");
-    // e.preventDefault();
+     e.preventDefault();
     try {
         const creds = {
           email: email,
@@ -34,19 +32,16 @@ console.log("yha pahuche");
         const result = await response.json();
         if(result.encodedToken != undefined){
           setIsLogIn(true);
-          console.log("loginCheckx:",isLogIn);
         }
-        console.log(result)
-        
-        console.log("loginCheck1:",isLogIn);
         localStorage.setItem("encodedToken", result.encodedToken);
         localStorage.setItem("email", email);
         localStorage.setItem("password", password);
         localStorage.setItem("name", result.foundUser.firstName);
+        navigate(location?.state?.from?.pathname);
       } catch (error) {
         console.log(error);
       }
-      console.log("cartbefore0",cart)
+
       try{
         const response = await fetch("/api/user/cart",{
           method: "GET",
@@ -55,22 +50,52 @@ console.log("yha pahuche");
           }
         })
         const result =  await response.json();
-        console.log("cartbtw1",cart)
         dataDispatch({
           type:"fetch_cart",
           payload: result.cart,
         })
     }
-
       catch(err){
         console.log(err);
     }
-    console.log("cartafter",cart);
+    
+    try{
+      const response = await fetch("/api/user/cart",{
+        method: "GET",
+        headers: {
+          "authorization": localStorage.getItem("encodedToken"),
+        }
+      })
+      const result =  await response.json();
+      dataDispatch({
+        type:"fetch_cart",
+        payload: result.cart,
+      })
+  } 
+  catch(err){
+      console.log(err);
+  }
+  try{
+    const response = await fetch("/api/user/wishlist",{
+      method: "GET",
+      headers: {
+        "authorization": localStorage.getItem("encodedToken"),
+      }
+    })
+    const result =  await response.json();
+    dataDispatch({
+      type:"fetch_wishlist",
+      payload: result.wishlist,
+    })
+} 
+catch(err){
+    console.log(err);
+}
+
+
+
   };
 
- 
-
-  console.log("loginCheck2:",isLogIn);
   
 
   return (
