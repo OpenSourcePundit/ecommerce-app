@@ -1,5 +1,5 @@
 import axios from "axios";
-import {createContext, useEffect, useReducer, useState} from "react";
+import {createContext, useEffect, useReducer} from "react";
 import {dataReducer} from "../Reducer/DataReducer";
 
 export const DataContext = createContext();
@@ -18,8 +18,8 @@ export const DataProvider = ({children})=>{
         search: "",
         filterCategory:["Fiction", "Non-Fiction", "self-help"],
         activeFilterCategory: [],
-        isLoggedIn:false,
-        address:[{Add_name:"Shashank", Hno:"11/B", street:"AzadNagar", city:"Etawah", state:"Uttar pradesh", Pin:"206242", Phone:"8130221540"}]
+        // isLoggedIn:false,
+        address:[{Add_name:"Praveen", Hno:"11/B", street:"AzadNagar", city:"Etawah", state:"Uttar pradesh", Pin:"206242", Phone:"8130221540"}]
       };
       const [state, dispatch] = useReducer(dataReducer, initialState);
       
@@ -39,7 +39,6 @@ export const DataProvider = ({children})=>{
             })
         }
         catch(err){
-            
             console.log(err);
         }
       }
@@ -65,7 +64,7 @@ export const DataProvider = ({children})=>{
             filterCategory: state.filterCategory,
             activeFilterCategory:state.activeFilterCategory,
             users:state.users,
-            isLoggedIn: state.isLoggedIn,
+            // isLoggedIn: state.isLogged,
         }}
         >
             {children}
