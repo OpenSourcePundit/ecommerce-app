@@ -6,7 +6,6 @@ import { FaShoppingCart } from "react-icons/fa";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { DataContext } from "../../../../../Contexts/dataContext";
 import { AuthContext} from "../../../../../Contexts/authcontext/authcontext";
-
 import "./productcard.css";
 
 export const ProductCard = ({ prod }) => {
@@ -95,7 +94,6 @@ export const ProductCard = ({ prod }) => {
       <div className="img" onClick={()=>navigate(`./${_id}`)}>
         <img src={prod.image} alt="" width="auto" height="200px" />
       </div>
-
       <div className="content">
         <div className="review-container">
           <div className="stars">

@@ -1,6 +1,6 @@
 import React from "react";
-import axios from "axios";
 import { useState, useContext } from "react";
+import {BiHide,BiShow} from "react-icons/bi"
 import { useNavigate, useLocation } from "react-router-dom";
 import { DataContext } from "../../Contexts/dataContext";
 import "./login.scss";
@@ -13,9 +13,11 @@ export const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("adarshbalika@gmail.com");
   const [password, setPassword] = useState("adarshbalika");
+  const [showPassword,setShowPassword] = useState(false)
   console.log("loginCheck0:", isLogIn);
 
   const handleSubmit = async (e) => {
+    console.log("clicked login");
     e.preventDefault();
     try {
       const creds = {
@@ -40,8 +42,10 @@ export const Login = () => {
     } catch (error) {
       console.log(error);
     }
- if(isLogIn)
- {   try {
+
+  if(isLogIn)
+ {     
+  try {
       const response = await fetch("/api/user/cart", {
         method: "GET",
         headers: {
@@ -71,7 +75,8 @@ export const Login = () => {
     } catch (err) {
       console.log(err);
     }
-    navigate(location?.state?.from?.pathname);}
+    }
+    navigate(location?.state?.from?.pathname);  
   };
 
   return (
@@ -90,13 +95,18 @@ export const Login = () => {
           />
           <label htmlFor="password">Password</label>
           <input
-            type="password"
+            type={showPassword?"text":"password"}
             value={password}
             name="password"
             id="password"
             placeholder="***********"
             onChange={(e) => setPassword(e.target.value)}
           />
+          <div className="show-password" onClick={()=>setShowPassword(!showPassword)}>
+            {showPassword? <BiHide size="20px"/> : <BiShow size="20px"/>}
+
+          </div>
+          
           <div className="btns">
             <button
               className="btn btn1"
