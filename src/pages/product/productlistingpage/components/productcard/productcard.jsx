@@ -63,7 +63,7 @@ export const ProductCard = ({ prod }) => {
   const isInWishlist = wishlist.some((item) => item._id === prod._id);
 
   const handleWishlist = async (prod) => {
-    try {
+   if(isLogIn) {try {
       const encodedToken = localStorage.getItem("encodedToken");
       const response = await fetch(
         isInWishlist ? `/api/user/wishlist/${prod._id}` : `/api/user/wishlist`,
@@ -85,6 +85,8 @@ export const ProductCard = ({ prod }) => {
       console.log("wishlist", wishlist, "productid", prod._id);
     } catch (error) {
       console.log(error);
+    }}else{
+      navigate("../login");
     }
   };
 

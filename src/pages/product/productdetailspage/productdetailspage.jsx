@@ -2,9 +2,10 @@ import React from "react";
 import { useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { DataContext } from "../../../Contexts/dataContext";
-import { AiFillStar, AiOutlineShoppingCart, AiOutlineHeart, } from "react-icons/ai";
+import { AiFillStar,AiOutlineHeart, } from "react-icons/ai";
 import {FaShoppingCart} from "react-icons/fa"
 import { BsTagFill, BsLightningFill } from "react-icons/bs";
+import { AuthContext} from "../../../Contexts/authcontext/authcontext"
 
 import "./productdetailspage.scss";
 
@@ -15,6 +16,7 @@ export const ProductDetailsPage = () => {
 
   const { productId } = useParams();
   const { products, dataDispatch,cart, wishlist } = useContext(DataContext);
+  const { isLogIn} = useContext(AuthContext);
 
   
   const product = products.find((prod) => prod._id === productId);
@@ -56,7 +58,7 @@ export const ProductDetailsPage = () => {
     
     
     const handleWishlist = async (prod) => {
-      try {
+      if(isLogIn){try {
          const encodedToken = localStorage.getItem("encodedToken");
           const response = await fetch ( isInWishlist ? `/api/user/wishlist/${prod._id}` : `/api/user/wishlist`, {
             method: isInWishlist ? 'DELETE' : 'POST', 
@@ -76,7 +78,7 @@ export const ProductDetailsPage = () => {
         } catch (error) {
           console.log(error);
         }
-      }
+      }}
 
 
   return (

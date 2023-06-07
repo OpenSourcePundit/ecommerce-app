@@ -114,7 +114,7 @@ export const SingleCartCard = ({card, index}) => {
  
     
   return (
-    <div className='card' key={index}>
+    <div className='cart-card' key={index}>
      <div className="card-container">
         <div className="card-image">
             <img src={image} alt={title} />

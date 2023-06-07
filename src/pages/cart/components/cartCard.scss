@@ -1,14 +1,16 @@
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
-.card{
-    width: 230px;
-    height: 100px;
+.cart-card{
+    width: 80%;
+    height: 230px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items:center;
     margin: 1rem 0px;
     background-color: #fff;
+    
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 15px;
     >.card-container{
@@ -113,7 +115,7 @@
                     height: 35px;
                     padding: 0 0.5rem;
                     background-color: rgb(168, 35, 35);
-                    color: #fff;
+                    color:#fff;
                     font-size: 16px;
                     letter-spacing: 2px;
                     border-radius: 5px;

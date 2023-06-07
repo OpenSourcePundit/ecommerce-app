@@ -8,7 +8,7 @@ import { AuthContext } from "../../Contexts/authcontext/authcontext";
 
 export const Login = () => {
   const location = useLocation();
-  const { dataDispatch, cart } = useContext(DataContext);
+  const { dataDispatch} = useContext(DataContext);
   const { isLogIn, setIsLogIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const [email, setEmail] = useState("adarshbalika@gmail.com");

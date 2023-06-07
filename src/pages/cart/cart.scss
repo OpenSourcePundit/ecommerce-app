@@ -1,3 +1,4 @@
+@import "../../styles/utils.scss";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
 .cart-container {
@@ -23,6 +24,7 @@
     width: 70%;
     display: flex;
     justify-content: space-between;
+    
     
 
     >.cart-cards {
@@ -78,14 +80,16 @@
           display: flex;
           align-items:center;
           justify-content: space-between;
-          >.dis{
+          >.dis1{
             width: 60%;
             padding-left: 1rem;
+            font-size: 18px;
           }
           >.number{
             width: 40%;
             padding-left: 3.5rem;
             font-weight: 500;
+            font-size: 18px;
             
           }
         }
@@ -96,14 +100,17 @@
           display: flex;
           align-items:center;
           justify-content: space-between;
-          >.dis{
+          font-size: 18px;
+          >.dis1{
             width: 60%;
             padding-left: 1rem;
+            font-size: 18px;
           }
           >.number{
             width: 40%;
             padding-left: 3.5rem;
             font-weight: 500;
+            font-size: 18px;
             
           }
         }
