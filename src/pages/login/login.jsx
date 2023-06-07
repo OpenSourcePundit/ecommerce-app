@@ -13,8 +13,7 @@ export const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("adarshbalika@gmail.com");
   const [password, setPassword] = useState("adarshbalika");
-  const [showPassword,setShowPassword] = useState(false)
-  console.log("loginCheck0:", isLogIn);
+  const [showPassword,setShowPassword] = useState(false);
 
   const handleSubmit = async (e) => {
     console.log("clicked login");
@@ -24,7 +23,6 @@ export const Login = () => {
         email: email,
         password: password,
       };
-      console.log(creds);
       const response = await fetch(`/api/auth/login`, {
         method: "POST",
         body: JSON.stringify(creds),
