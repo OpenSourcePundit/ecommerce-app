@@ -12,6 +12,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useContext } from "react";
 import { DataContext } from "../../Contexts/dataContext";
+import {AuthContext} from "../../Contexts/authcontext/authcontext"
 
 // import { useCartContext,useFilter,useWishListContext } from "../../context";
 export function Navbar() {
@@ -32,6 +33,7 @@ export function Navbar() {
   // };
   const { products, dataDispatch, cartLength, wishlistLength } =
     useContext(DataContext);
+    const {isLogIn} = useContext(AuthContext)
   const handleSearch = (value) => {
     navigate("/products");
     dataDispatch({ type: "HandleSearch", payload: value });
@@ -69,7 +71,7 @@ export function Navbar() {
             <FontAwesomeIcon icon={faUser} />
           </Link>
           <h3 className="nav-icons">
-            {localStorage.getItem("name")}
+            {isLogIn && localStorage.getItem("name")}
           </h3>
         </div>
       </nav>
