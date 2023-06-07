@@ -46,7 +46,7 @@ export const products = [
     discount: 17,
     Pages: 328,
     Language: "English",
-    rating: 4.7,
+    rating: 2.7,
     cashOnDelivery:false,
     fastDelivery:true,
     categoryName: "Fiction"
@@ -61,7 +61,7 @@ export const products = [
     discount: 20,
     Pages: 1178,
     Language: "English",
-    rating: 4.9,
+    rating: 1.9,
     cashOnDelivery:false,
     fastDelivery:true,
     categoryName: "Fantasy"
@@ -91,7 +91,7 @@ export const products = [
     discount: 22,
     Pages: 224,
     Language: "English",
-    rating: 4.3,
+    rating: 3.3,
     cashOnDelivery:false,
     fastDelivery:true,
     categoryName: "Fiction"
@@ -106,7 +106,7 @@ export const products = [
     discount: 20,
     Pages: 464,
     Language: "English",
-    rating: 4.8,
+    rating: 3.8,
     cashOnDelivery:false,
     fastDelivery:true,
     categoryName: "Non-Fiction"
@@ -121,7 +121,7 @@ export const products = [
     discount: 20,
     Pages: 320,
     Language: "English",
-    rating: 4.6,
+    rating: 3.6,
     cashOnDelivery:false,
     fastDelivery:true,
     categoryName: "Fantasy"
@@ -136,7 +136,7 @@ export const products = [
     discount: 17,
     Pages: 336,
     Language: "English",
-    rating: 4.9,
+    rating: 2.9,
     cashOnDelivery:false,
     fastDelivery:true,
     categoryName: "Non-Fiction"
