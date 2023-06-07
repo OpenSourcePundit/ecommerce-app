@@ -16,10 +16,9 @@ export const DataProvider = ({children})=>{
         wishlist: [],
         wishlistLength:0,
         search: "",
-        filterCategory:["Fiction", "Non-Fiction", "self-help"],
+        filterCategory:["Fiction", "Non-Fiction", "Mystery","Fantasy"],
         activeFilterCategory: [],
-        // isLoggedIn:false,
-        address:[{Add_name:"Praveen", Hno:"11/B", street:"AzadNagar", city:"Etawah", state:"Uttar pradesh", Pin:"206242", Phone:"8130221540"}]
+        address:[{Add_name:"Shashank", Hno:"11/B", street:"AzadNagar", city:"Etawah", state:"Uttar pradesh", Pin:"206242", Phone:"8130221540"}]
       };
       const [state, dispatch] = useReducer(dataReducer, initialState);
       

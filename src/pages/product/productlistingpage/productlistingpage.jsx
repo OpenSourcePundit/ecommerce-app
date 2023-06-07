@@ -1,15 +1,12 @@
 import React from "react";
-import { useContext,useState } from "react";
+import { useContext } from "react";
 import { DataContext } from "../../../Contexts/dataContext";
 import { ProductCard } from "./components/productcard/productcard";
 import { ProductFilter} from "./components/filter/filter";
 import "./productlistingpage.css";
 
 export const ProductListingPage = () => {
-  let { 
-    dataDispatch,
-    category,
-    filterCategory,
+  let {
     sortBy,
     priceRange,
     rating,
