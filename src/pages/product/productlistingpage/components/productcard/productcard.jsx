@@ -122,7 +122,7 @@ export const ProductCard = ({ prod }) => {
           {isInCart ? (
             <button
               className="btn"
-              style={{}}
+              style={{ backgroundColor:"brown"}}
               onClick={() => navigate("/cart")}
             >
               <FaShoppingCart />
