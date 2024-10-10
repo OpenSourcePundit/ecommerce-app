@@ -29,7 +29,8 @@ export const Login = () => {
       });
       // saving the encodedToken in the localStorage
       const result = await response.json();
-      if (result.encodedToken != undefined) {
+      console.log("resultLogin",result)
+      if (result.encodedToken !== undefined) {
         setIsLogIn(true);
       }
       localStorage.setItem("encodedToken", result.encodedToken);
