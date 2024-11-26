@@ -1,0 +1,116 @@
+<html>
+
+<head>
+    <title>
+        Astrome Assignment
+    </title>
+</head>
+
+<style>
+.bar {
+    width: 20%;
+    height: 100%; 
+    animation: changeHeight 2s infinite ease-in-out;
+}
+.buttons-wrapper{
+  display:flex;
+  align-items:center; 
+  justify-content:space-around;
+  padding:2rem;
+  color:white;
+}
+
+button{
+  cursor: pointer;
+  padding:.8rem;
+}
+
+
+#red   
+{ background-color:red}
+#yellow  
+{background-color:yellow}
+#green   
+{background-color:green}
+#blue    
+{background-color:blue}
+#brown   
+{background-color:brown}
+
+#main{
+  background-color:black; 
+  width:90% ; 
+  height:50%;
+  display:flex; 
+  align-items:center; 
+  justify-content:center;
+}
+#wrapper{
+  width:97% ; 
+  height:97%; 
+  display:flex; 
+  align-items:end;
+  
+}
+  
+  
+  
+</style>
+
+
+<body>
+    <div id="main">
+     <div id="wrapper">
+            <div class="bar" id="red"></div>
+            <div class="bar" id="yellow" ></div>
+            <div class="bar" id="green" ></div>
+            <div class="bar" id="blue" ></div>
+            <div class="bar" id="brown" ></div>
+     </div>
+    </div>
+
+   <div class="buttons-wrapper">
+      <button style="background-color:green" onclick="startRandom()">
+        Start
+    </button>
+    <button style="background-color:purple" onclick="resetRandom()">
+        Reset
+    </button>
+    <button style="background-color:red" onclick="stopRandom()">
+        Stop
+    </button>
+   </div>
+</body>
+ 
+ 
+ 
+ 
+ <script>
+ const bars = document.querySelectorAll('.bar');
+ 
+           
+      function animateBars() {
+        bars.forEach(bar => {
+        const randomHeight = Math.random() * 100 ;
+        const randomDuration = Math.random() * 1 + 1;
+        bar.style.height = `${randomHeight}%`;
+        bar.style.transition = `height ${randomDuration}s ease-in-out`;
+    });
+}     function startRandom (){
+        randomFetch =setInterval(function () {
+	      animateBars()}, 1000);
+  
+}     function resetRandom (){
+        bars.forEach(bar => {
+        bar.style.height = `100%`;
+        bar.style.transition = `height 1s ease-in-out`;
+    });
+}
+      function stopRandom (){
+        clearInterval(randomFetch);
+}
+            
+            
+  </script>
+
+</html>
