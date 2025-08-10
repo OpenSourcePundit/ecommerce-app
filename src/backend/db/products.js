@@ -51,21 +51,21 @@ export const products = [
     fastDelivery:true,
     categoryName: "Fiction"
   },
-  {
-    _id: "4",
-    title: "The Lord of the Rings",
-    image: "https://i.ibb.co/0X49MXc/4-33.jpg",
-    author: "J.R.R. Tolkien",
-    price: 249,
-    newPrice: 199,
-    discount: 20,
-    Pages: 1178,
-    Language: "English",
-    rating: 1.9,
-    cashOnDelivery:false,
-    fastDelivery:true,
-    categoryName: "Fantasy"
-  },
+  // {
+  //   _id: "4",
+  //   title: "The Lord of the Rings",
+  //   image: "https://i.ibb.co/0X49MXc/4-33.jpg",
+  //   author: "J.R.R. Tolkien",
+  //   price: 249,
+  //   newPrice: 199,
+  //   discount: 20,
+  //   Pages: 1178,
+  //   Language: "English",
+  //   rating: 1.9,
+  //   cashOnDelivery:false,
+  //   fastDelivery:true,
+  //   categoryName: "Fantasy"
+  // },
   {
     _id: "5",
     title: "Pride and Prejudice",
