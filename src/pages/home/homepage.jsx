@@ -10,7 +10,7 @@ export function HomePage() {
 
     const navigate = useNavigate();
     const {dataDispatch,category} = useContext(DataContext);
-    const {isLogIn} =useContext(AuthContext);
+    const {isLogIn} = useContext(AuthContext);
     const categoryHandler = (categoryName) =>{
    
       dataDispatch({
@@ -34,13 +34,12 @@ export function HomePage() {
     return(
       
         <div className="home-container">
-          {console.log("homepagelogincheck",isLogIn)}
           <div className="home-img-container">
             <div className="bg-img-container"></div>
             <div className="home-page-text">
               <div className="main-text">
                 <h4>
-                  Welcome to <a href="/"><img src={booklogo} alt="bibliotec" srcset="" /></a>
+                  Welcome to <a href="/"><img src={""} alt="bibliotec" srcset="" /></a>
                 </h4>
                 <div>
                   <h1 className="main-text-title">For All Your</h1>

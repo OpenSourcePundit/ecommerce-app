@@ -29,12 +29,10 @@ function App() {
      return isLogIn ? children :( <Navigate to="/login" state={{from:location}}  />)
    }
 
-   console.log("logincheckapp",isLogIn)
-
   return (
     <div className="App">
       
-       <Navbar/>
+       {isLogIn && <Navbar/>}
        <Routes>
           <Route path="/" element={<HomePage/>}/>
           <Route path="/products" element={<ProductListingPage/>}/>

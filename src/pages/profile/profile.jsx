@@ -79,11 +79,12 @@ export const Profile = () => {
     }
 
     const handleLogout = ()=>{
+        setIsLogIn(false);
+
         localStorage.removeItem("encodedToken");
         localStorage.removeItem("email");
         localStorage.removeItem("password");
         localStorage.removeItem("name")
-        setIsLogIn(false);
         dataDispatch({
           type:"logout",
           
