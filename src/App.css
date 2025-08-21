@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-size: medium;
 }
 
 .App-logo {
@@ -107,9 +108,16 @@ input{
                 border-radius: 10px;
                 border: 2px solid lightgray;
                 font-family:  "Lato", sans-serif;
+                font-size: large;
                 
                 &:hover{
                     border: 2px solid rgb(41, 92, 137);
                 }
             
+}
+button{
+   user-select: none;      
+  -webkit-user-select: none; 
+  -moz-user-select: none;    
+  -ms-user-select: none;
 }

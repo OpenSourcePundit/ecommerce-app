@@ -1,13 +1,17 @@
 import React from 'react'
 import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import "./signup.scss";
+import {BiHide,BiShow} from "react-icons/bi"
+
+import "./login.scss";
 import { AuthContext } from '../../Contexts/authcontext/authcontext';
 
 export const Signup = () => {
 
   const navigate = useNavigate();
   const {isLogIn, setIsLogIn, item} = useContext(AuthContext);
+  const [showPassword,setShowPassword] = useState(false);
+  
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -41,6 +45,7 @@ export const Signup = () => {
       localStorage.setItem("password", password);
       localStorage.setItem("name", result.createdUser.firstName);
       setIsLogIn(true);
+      
       }
       else{
         alert(result.errors);
@@ -57,65 +62,63 @@ export const Signup = () => {
   };
   return (
     <div className="Container">
-      <div className="loginSection">
-        <h1>Sign In</h1>
+      <div className="login-img"></div>
+      <div className="login-section">
+        <div className="login-section-form">
+        <h1>Sign UP</h1>
         <form action="" onSubmit={(e) => handleSubmit(e)}>
           
-            
-            <label  htmlFor="firstName">
-            FirstName
-          </label>
+           
           <input
             type="text"
             value={firstName}
             name="firstName"
             id="firstName"
-            placeholder="Text"
+            placeholder="First Name"
             onChange={(e) => setFirstName(e.target.value)}
           />
             
-            
-            <label  htmlFor="lastName">
-            LastName
-          </label>
+           
           <input
             type="text"
             value={lastName}
             name="lastName"
             id="lastName"
-            placeholder="Admin"
+            placeholder="Last Name"
             onChange={(e) => setLastName(e.target.value)}
           />
             
-          
-          <label  htmlFor="email">
-            Email
-          </label>
+       
           <input
             type="email"
             value={email}
             name="email"
             id="email"
-            placeholder="youremail@gmail.com"
+            placeholder="Email"
             onChange={(e) => setEmail(e.target.value)}
           />
-          <label htmlFor="password">
-            Password
-          </label>
-          <input
-            type="password"
-            value={password}
-            name="password"
-            id="password"
-            placeholder="***********"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <div className="reg-btns">
-            <button className="btn regbtn" type="submit">Create New Account</button>
+          
+          <div className="password-section">
+                      <input
+                      type={showPassword?"text":"password"}
+                      value={password}
+                      name="password"
+                      id="password"
+                      placeholder="password"
+                      onChange={(e) => setPassword(e.target.value)}
+                    />
+                    <div className="show-password" onClick={()=>setShowPassword(!showPassword)}>
+                      {showPassword? <BiHide size="20px"/> : <BiShow size="20px"/>}
+          
+                    </div>
+                  </div>
+          <div className="btns">
+            <button className="btn btn1 " type="submit">Create New Account</button>
             {/* <button className="btn btn2" type="submit">Log In as Guest</button> */}
           </div>
         </form>
         <button onClick={()=>navigate('/login')} >Already have account? Log In </button>
+      </div>
       </div>
     </div>
 
