@@ -58,7 +58,8 @@ export function Navbar() {
             />
           </form>
         </div>
-        <div className="icons">
+        {console.log("navbar rendered")}
+        <div className={`icons ${isLogIn?'visible':'hidden'}`}  >
           <Link to="/wishlist" className="nav-icons">
             <FontAwesomeIcon icon={faHeart} />{" "}
             <span className="lengthItem">{wishlistLength}</span>{" "}

@@ -1,5 +1,5 @@
 @import "../../styles/utils.scss";
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
 
 .cart-container {
   width: 100%;
@@ -13,7 +13,6 @@
   background-color: rgb(231, 233, 238);
 
   >.cart-title {
-    font-family: Poppins;
     font-weight: 600;
     letter-spacing: 2px;
     font-size: 20px;
