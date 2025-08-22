@@ -151,6 +151,36 @@
           cursor: pointer;
         }
 }
-// @media screen and (max-width:){
 
-// }
+
+@media only screen and (max-width: 992px) {
+  .login-img{
+    display: none;
+  }
+  .btn{
+    font-size: medium;
+    padding: .5rem;
+    letter-spacing: .5px;
+    &:hover {
+          transform: scale(1.03);
+          padding: .5rem .56rem;
+          cursor: pointer;
+        }
+  }
+
+}
+@media only screen and (max-width: 600px) {
+  
+  .btn{
+    font-size: medium;
+    padding: .5rem;
+    letter-spacing: .5px;
+    &:hover {
+          transform: scale(1.03);
+          padding: .5rem .56rem;
+          cursor: pointer;
+        }
+  }
+
+}
+

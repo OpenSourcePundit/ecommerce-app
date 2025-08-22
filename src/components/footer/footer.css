@@ -53,3 +53,13 @@
             font-size: 2rem;
             padding: 0px 0.8rem;
           }
+@media only screen and (max-width: 600px) {
+  .footer-left-section{
+    display: none;
+  }
+}
+@media only screen and (max-width: 400px) {
+  footer{
+    display: none;
+  }
+}
