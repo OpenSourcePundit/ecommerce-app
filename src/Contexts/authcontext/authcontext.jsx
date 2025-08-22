@@ -5,10 +5,11 @@ import { createContext, useState } from 'react'
 
     export const AuthProvider = ({children})=>{
     const [isLogIn, setIsLogIn] = useState(false);
-    // localStorage.getItem("encodedToken")!=undefined
+    const [isLoading, setIsLoading] = useState(false);
+
     
         return(
-        <AuthContext.Provider value={{isLogIn, setIsLogIn}}>
+        <AuthContext.Provider value={{isLogIn, setIsLogIn,isLoading,setIsLoading}}>
             {children}
         </AuthContext.Provider>
         )
