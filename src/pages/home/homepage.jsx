@@ -2,7 +2,7 @@ import {Link,useNavigate} from "react-router-dom";
 import { useContext,React} from "react";
 import {DataContext} from "../../Contexts/dataContext"; 
 import { AuthContext } from "../../Contexts/authcontext/authcontext";
-import booklogo from "../../biblioteclogo.png" 
+import feature from "../../assets/feature-img2.jpg"
 
 import "./homepage.css";
 export function HomePage() {
@@ -63,6 +63,7 @@ export function HomePage() {
                       >
                         <div className="detail-box text-center">
                           <div className="category-title">{categoryName}</div>
+                          <img className="feature-img"src={feature} alt="feature-img"/>
                           <p className="paragraph-sm">{description}</p>
                         </div>
                       </div>
