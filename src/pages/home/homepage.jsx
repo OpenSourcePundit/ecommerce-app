@@ -36,31 +36,23 @@ export function HomePage() {
         <div className="home-container">
           <div className="home-img-container">
             <div className="bg-img-container"></div>
-            <div className="home-page-text">
+            
               <div className="main-text">
-                <h4>
-                  Welcome to <a href="/"><img src={""} alt="bibliotec" srcset="" /></a>
-                </h4>
-                <div>
-                  <h1 className="main-text-title">For All Your</h1>
-                  <h1 className="main-text-title">Reading Needs</h1>
-                </div>
+                
+                
+                  <div className="main-text-title"> The Book Lover's Dreamland Awaits!</div>
+                  <div className="sub-text-title">Welcome to the ultimate book lover's paradise!<br/> Join our community and contribute to the ever-evolving <br/>library of stories, where every book has a chance to inspire someone new.</div>
+                
                 <Link to="/products">
-                  <button className="link-btn shop-now-btn" onClick={handleShowBtn}>SHOP NOW</button>
+                  <button className="btn shop-now-btn" onClick={handleShowBtn}>SHOP NOW</button>
                 </Link>
               </div>
-            </div>
-            <div className="overlay"></div>
+            
           </div>
   
-          <div className="category-container flex-center">
-            <div className="container">
-              <div className="category-heading text-center">
-                <h2>Featured Book Categories</h2>
-                <p className="paragraph-md">
-                  There are many categories of books available at Biblotec. Choose your favorite one
-                  now.
-                </p>
+          <div className="category-container ">
+              <div className="main-text-title ">
+                Featured Book Categories
               </div>
               <div className="category-row">
                 {category &&
@@ -70,14 +62,14 @@ export function HomePage() {
                          onClick={() => categoryHandler(categoryName)}
                       >
                         <div className="detail-box text-center">
-                          <h4>{categoryName}</h4>
+                          <div className="category-title">{categoryName}</div>
                           <p className="paragraph-sm">{description}</p>
                         </div>
                       </div>
                     );
                   })}
               </div>
-            </div>
+            
           </div>
         </div>
     )
