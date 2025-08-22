@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "./navbar.css";
 import logo from "../../Utils/black_on_trans.png"
@@ -8,30 +8,16 @@ import {
   faHeart,
   faCartShopping,
   faUser,
-  faBars,
 } from "@fortawesome/free-solid-svg-icons";
 import { useContext } from "react";
 import { DataContext } from "../../Contexts/dataContext";
 import {AuthContext} from "../../Contexts/authcontext/authcontext"
+import { HamMenu } from "./hammenu";
 
-// import { useCartContext,useFilter,useWishListContext } from "../../context";
 export function Navbar() {
-  // const [searchValue, setSearchValue] = useState();
-  // const {cartProducts} = useCartContext()
-  // const {wishListState} = useWishListContext();
-  // const {dispatch} = useFilter();
-
-  // const itemInCartReducer = (prev,curr)=> prev+curr.qty;
-  // const totalItemsInCart = cartProducts.cart.reduce(itemInCartReducer,0)
   const navigate = useNavigate();
 
-  // const navigate = useNavigate();
-  // let token = localStorage.getItem("token");
-  // const LogUserOut = () => {
-  //   localStorage.removeItem("token");
-  //   navigate("/");
-  // };
-  const { products, dataDispatch, cartLength, wishlistLength } =
+  const { dataDispatch, cartLength, wishlistLength } =
     useContext(DataContext);
     const {isLogIn} = useContext(AuthContext)
   const handleSearch = (value) => {
@@ -58,7 +44,6 @@ export function Navbar() {
             />
           </form>
         </div>
-        {console.log("navbar rendered")}
         <div className={`icons ${isLogIn?'visible':'hidden'}`}  >
           <Link to="/wishlist" className="nav-icons">
             <FontAwesomeIcon icon={faHeart} />{" "}
@@ -75,6 +60,14 @@ export function Navbar() {
             {isLogIn && localStorage.getItem("name")}
           </h3>
         </div>
+        {!isLogIn &&<div className="icons login-btn">
+       <Link to="/login" className=" icons nav-icons">
+            <FontAwesomeIcon icon={faUser} />
+          </Link>
+        </div>}
+         <div className="ham-icon nav-icons">
+            <HamMenu/>
+          </div>
       </nav>
     </>
   );

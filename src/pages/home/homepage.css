@@ -1,6 +1,8 @@
 .home-container {
-    padding: 3rem 4rem;
-    flex-grow: 1
+    /* padding: 3rem 4rem; */
+    /* flex-grow: 1 */
+    background-color: white;
+
 }
 
 .home-img-container {
@@ -8,38 +10,48 @@
 }
 
 .bg-img-container {
-    background-image: url('../../ImagebyStanislavKondratievviaUnsplash.6e7fc683.jpg');
+    background-image: url('../../../public/Rectangle5.png');
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 31.25rem;
+    background-position: bottom;
+    /* object-fit:cover; */
+    /* aspect-ratio: 1; */
+    background-size:cover;
+    width: 100%;
+    height: 90vh;
 }
 
-.home-page-text {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    position: absolute;
-    bottom: 35%;
-    left: 20%;
-    color: white;
-    z-index: 1;
-}
+
 
 .main-text {
     display: flex;
     flex-direction: column;
-    gap: 1rem
-}
-.main-text img {
-    height: 30px;
+    align-items: center;    
+    justify-content:center;
+    width: 70%;
+     position: absolute;
+    top: 3%;
+    left: 15%;
+    color: white;
+    z-index: 1;
+
 }
 
 .main-text-title {
-    text-align: left;
+    text-align: center;
     font-weight: var(--font-bold);
-    font-size: 3rem;
-    line-height: 1.4;
+    font-size: 2rem;
+    color: #FF7700;
+    padding:.5rem;
+    margin: .5rem;
+}
+.sub-text-title {
+    text-align: center;
+    font-weight: var(--font-bold);
+    font-size: 1.5rem;
+    /* line-height: .5rem; */
+    color: whitesmoke;
+    padding:.5rem;
+    margin: .5rem;
 }
 
 .home-img-container .overlay {
@@ -52,37 +64,40 @@
     transition: .5s ease;
 }
 
-.shop-now-btn {
-    width: fit-content;
-    min-width: 80px;
-    padding: 10px 0px 10px 0px;
-    cursor: pointer;
+.shop-now-btn.btn {
+    margin: 1rem;
+    font-size: 1.rem;
+    /* padding: 10px 50px 10px 50px;     */
 }
 
 
 /* Category Container Styles */
-.category-container,
+/* .category-container,
 .category-heading .paragraph-md,
 .category-row {
-    margin-top: 2rem;
-}
+    margin-top: 3rem;
+} */
 
-.category-container{
-    display: flex;
+.category-container{   
     width: 100%;
-}
-.container{
-    width: 90%;
-    display: flex;
-    flex-direction: column;
+    background-color: white;
+    /* height: auto; */
+    padding: 0rem 2rem 2rem 2rem;
+
 }
 
-.box,
 .category-row {
     display: flex;
-    justify-content: space-around;
-    gap: 1rem;
-
+    justify-content:space-evenly;
+    margin: 3rem;
+}
+.category-title{
+    font-weight: bold;
+    font-size: 1.3rem;
+    text-shadow: 2px 2px 5px #f7f6f6;
+}
+.paragraph-sm{
+    font-size: 1rem;
 }
 
 .detail-box p {
@@ -91,17 +106,13 @@
 
 
 .box {
-    background-color: var(--lynxWhite);
-    border-radius: 50%;
+    background-color: #cc9600;
+    border-radius: 1rem;
     flex-wrap: wrap;
-    height: 14.875rem;
-    
-    margin-right: 1rem;
-    width: 14.875rem;
     padding: 2rem 1rem 0rem 1rem;
     transition: transform .2s ease, -webkit-transform .2s ease;
     cursor: pointer;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    box-shadow: black 3px 3px 20px;
 }
 
 .box:hover {
@@ -109,6 +120,7 @@
    
 }
 
+/* 
 
 .icon-bar {
     display: flex;
@@ -127,9 +139,9 @@
 .footer-mn-lt,
 .footer-mn-rt {
     line-height: 2rem;
-}
+} */
 
-@media screen and (max-width:500px) {
+@media screen and (max-width:780px) {
 
     .home-container {
         padding: 1rem;
@@ -138,6 +150,10 @@
     .category-row {
         flex-direction: column;
         align-items: center;
+        justify-content: center;
+    }
+    .box{
+        margin:.5rem;
     }
 
     .shop-now-btn {
@@ -151,15 +167,21 @@
     }
 
     .main-text-title {
-        font-size: 2.2rem;
+        font-size: 1rem;
+    }
+    .sub-text-title {
+        font-size: .8rem;
     }
 
     .bg-img-container {
         height: 25rem
     }
-    .footer-mn {
-        flex-direction: column;
-        gap:1rem;
-        font-size: 85%;
-    }
+    .category-title{
+    font-weight: bold;
+    font-size: 1rem;
+    text-shadow: 2px 2px 5px #f7f6f6;
+}
+.paragraph-sm{
+    font-size: .8rem;
+}
 }
