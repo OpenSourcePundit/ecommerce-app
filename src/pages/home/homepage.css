@@ -113,11 +113,20 @@
     transition: transform .2s ease, -webkit-transform .2s ease;
     cursor: pointer;
     box-shadow: black 3px 3px 20px;
+    height: auto;
 }
 
 .box:hover {
     transform: scale(1.03);
    
+}
+
+.feature-img{
+    margin-top: 1rem;
+    border-radius: 6px;
+    height: 8rem;
+    width: 8rem;
+    box-shadow: white 3px 3px 20px;
 }
 
 /* 
