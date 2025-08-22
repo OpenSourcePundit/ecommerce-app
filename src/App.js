@@ -35,7 +35,7 @@ function App() {
     <div className="App">
       
        <LoadingFallBack isLoading={isLoading}>
-        {isLogIn && <Navbar/>}
+         <Navbar/>
        <Routes>
           <Route path="/" element={<HomePage/>}/>
           <Route path="/products" element={<ProductListingPage/>}/>
