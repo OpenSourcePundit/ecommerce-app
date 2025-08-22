@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import "./navbar.css";
-import booklogo from "../../biblioteclogo.png";
+import logo from "../../Utils/black_on_trans.png"
 import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -44,7 +44,7 @@ export function Navbar() {
       <nav className="navbar">
         <div className="logo">
           <Link to="/">
-            <img src={booklogo} alt="bibliotec" srcset="" />
+            <img src={logo} alt="bibliotec" srcset="" />
           </Link>
         </div>
         <div className="searchbox">
