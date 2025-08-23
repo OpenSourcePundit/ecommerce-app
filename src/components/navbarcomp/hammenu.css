@@ -18,7 +18,7 @@
   position: fixed;
   top: 25;
   right: 0;
-  height: 40vh;
+  height: auto;
   width: min(80vw, 320px);
   background: #000;         /* matches your theme */
   color: #fff;
@@ -64,14 +64,14 @@
 }
 
 /* Hide drawer on desktop (optional; keeps DOM light) */
-@media (min-width: 800px) {
+@media (min-width: 850px) {
   .ham-backdrop,
   .ham-drawer { display: none; }
 }
 
 .ham-icon { display: none; }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   .ham-icon { display: block; }
   .navbar .icons{ display: none; } /* hide desktop UI on mobile */
 }

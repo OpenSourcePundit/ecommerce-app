@@ -1,5 +1,5 @@
 import { useState} from "react";
-import { useNavigate} from "react-router-dom";
+import { useNavigate,useLocation} from "react-router-dom";
 import "./login_signup.scss";
 import { Password } from "../../components/password-section";
 import { useAuthActions } from "../../Utils/utils";
@@ -7,6 +7,8 @@ import { useAuthActions } from "../../Utils/utils";
 export const Login = () => {
 
   const navigate = useNavigate();
+  const location = useLocation();
+
   const [email, setEmail] = useState("adarshbalika@gmail.com");
   const [password, setPassword] = useState("adarshbalika");
   const [showPassword, setShowPassword] = useState(false);
@@ -19,6 +21,7 @@ export const Login = () => {
 
   return (
     <div className="Container">
+
       <div className="login-img"></div>
       <div className="login-section">
         <div className="login-section-form">
@@ -47,7 +50,7 @@ export const Login = () => {
               {/* <button className="btn btn2" type="submit" onClick={(e)=>loginAsGuest(e)} >Log In as Guest</button> */}
             </div>
           </form>
-          <button className="btn" onClick={() => navigate("../signup")}>
+          <button className="btn" onClick={() => navigate("../signup",{state:{from:(location?.state?.from)?(location?.state?.from) : "/products"}})}>
             Don't have account? Register here
           </button>
         </div>
