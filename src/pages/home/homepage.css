@@ -161,10 +161,7 @@
         align-items: center;
         justify-content: center;
     }
-    .box{
-        margin:.5rem;
-    }
-
+    
     .shop-now-btn {
         padding: 0.4rem 0.5rem;
         font-size: 0.7rem;
@@ -190,7 +187,22 @@
     font-size: 1rem;
     text-shadow: 2px 2px 5px #f7f6f6;
 }
-.paragraph-sm{
+.paragraph-category-sm{
     font-size: .8rem;
 }
+.box{
+    display: flex;
+    margin: .5rem;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+}
+.feature-img,.paragraph-category-sm{
+    display: none;
+
+}
+
+
+
+
 }
