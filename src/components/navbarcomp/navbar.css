@@ -81,7 +81,7 @@
 .ham-icon{
   display: none;
 }
-@media screen and (max-width:780px) {
+@media screen and (max-width:850px) {
  .icons{
   display: none;
  }

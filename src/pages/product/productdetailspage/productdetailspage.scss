@@ -4,21 +4,24 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(229, 234, 240);
+    background-color: rgb(7, 7, 7);
     
     >.product-page-main{
-        width: 550px;
-        height: 500px;
-        padding: 1.5rem;
-        background-color: #fff;
+        width: 55%;
+        height: 80%;
+        padding: .5rem;
+        background-color: var(--primary-yellow);
         display: flex;
+        align-items: stretch;
+        justify-content: space-between;
         flex-direction: column;
-        box-shadow: rgba(0,0,0,0.2) 0px 5px 10px;
+        border-radius: 10px;
+        box-shadow: var(--primary-yellow) 0px 0px 40px;
 
         >.main-sections{
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
             >.image-container{
                 width: 270px;
                 height: 320px;
@@ -29,6 +32,7 @@
                     width: 90%;
                     height: 100%;
                     padding: 0px 0.5rem;
+                    box-shadow: var(--primary-black) 10px 10px 30px;
                 }
             }
             >.details-container{
@@ -155,18 +159,19 @@
         }
         >.buttons{
             display: flex;
+            margin: 2rem;
             align-items: center;
-            margin-top: 2rem;
-            justify-content: space-around;
+            flex-direction: column;
             >.btn{
                 padding: 0.5rem 2rem;
-                background-color:  rgb(41, 92, 137);
+                background-color:  #000000;
                 color: #fff;
                 display: flex;
                 align-items: center;
-                font-size: 16px;
-                letter-spacing: 2px;
-                border: none;
+                justify-content: center;
+                font-size: 1rem;
+                margin: 0.3rem;
+                border: dashed 0.1rem #cc9600 ;
                 border-radius: 5px;
                 &:hover{
                     opacity: 0.8;
@@ -178,4 +183,12 @@
             }
         }
     }
+}
+
+#detail-pg-cart{
+    width: 12rem;
+}
+
+#detail-pg-wishlist{
+    width: 20rem;
 }

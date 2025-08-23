@@ -1,6 +1,6 @@
 import React from "react";
 import { useState} from "react";
-import { useNavigate} from "react-router-dom";
+import {  useNavigate} from "react-router-dom";
 
 import "./login_signup.scss";
 import { Password } from "../../components/password-section";

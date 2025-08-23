@@ -53,6 +53,8 @@ export function useAuthActions() {
         });
         const wlJson = await wlRes.json();
         dataDispatch({ type: "fetch_wishlist", payload: wlJson.wishlist || [] });
+        console.log("login:location:",location)
+
          location?.state
       ? navigate(location?.state?.from?.pathname)
       : navigate("/products");
@@ -84,7 +86,8 @@ export function useAuthActions() {
         localStorage.setItem("email", creds.email);
         localStorage.setItem("name", result?.createdUser?.firstName || "");
         setIsLogIn(true);
-         (location?.state)?(navigate(location?.state?.from?.pathname)):(navigate("/products"));
+        console.log("signup:location:",location)
+         location?.state ? navigate((location?.state?.from?.pathname)!=="/login"? (location?.state?.from?.pathname): "/products") : navigate("/products");
       }
     } catch (err) {
       console.error(err);

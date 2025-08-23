@@ -56,9 +56,6 @@ export function Navbar() {
           <Link to="/profile" className="nav-icons">
             <FontAwesomeIcon icon={faUser} />
           </Link>
-          <h3 className="nav-icons">
-            {isLogIn && localStorage.getItem("name")}
-          </h3>
         </div>
         {!isLogIn &&<div className="icons login-btn">
        <Link to="/login" className=" icons nav-icons">
