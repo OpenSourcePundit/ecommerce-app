@@ -1,6 +1,6 @@
 import React from "react";
 import { useContext } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate,Navigate, useLocation } from "react-router-dom";
 import { DataContext } from "../../../Contexts/dataContext";
 import { AiFillStar,AiOutlineHeart, } from "react-icons/ai";
 import {FaShoppingCart} from "react-icons/fa"
@@ -11,6 +11,7 @@ import "./productdetailspage.scss";
 
 export const ProductDetailsPage = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   let result = {};
   let result1 = {};
 
@@ -29,9 +30,9 @@ export const ProductDetailsPage = () => {
   
   
   const isInCart = cart.some((item)=> item._id === product._id);
-  console.log("cart", cart,"wishlist",wishlist)
   const handleAddCart = async (prod) => {
-    try {
+    if(isLogIn){
+      try {
        const prod1 = {
         product: prod
        }
@@ -53,6 +54,9 @@ export const ProductDetailsPage = () => {
       } catch (error) {
         console.log(error);
       }
+    }else{
+        navigate("/login",{state:{from:location}})
+    }
     }
     const isInWishlist = wishlist.some((item)=> item._id === product._id);
     
@@ -78,7 +82,10 @@ export const ProductDetailsPage = () => {
         } catch (error) {
           console.log(error);
         }
-      }}
+      }else{
+        navigate("/login",{state:{from:location}})
+      }
+    }
 
 
   return (
@@ -86,11 +93,12 @@ export const ProductDetailsPage = () => {
       <div className="product-page-main">
         <div className="main-sections">
           <div className="image-container">
-            <img src={image} />
+            <img src={image} alt=""/>
           </div>
+
           <div className="details-container">
             <div className="title">
-              <h3>{title}</h3>
+              <div>{title}</div>
             </div>
             <div className="rating">
               <h4>{rating}</h4>
@@ -125,9 +133,10 @@ export const ProductDetailsPage = () => {
                 <div className="tag">
                     <h5><BsTagFill/></h5><p>Inclusive of All Taxes</p>
                 </div>
-                <div className="tag">
-                    <h5><BsTagFill/></h5><p>Cash On Delivery {cashOnDelivery ?"Available":"Unavailabe" }</p>
-                </div>
+                {cashOnDelivery && <div className="tag">
+                    <h5><BsTagFill/></h5><p>Cash On Delivery</p>
+                </div>}
+                
             </div>
             <div className="page-section">
                 <h5>Pages: <span>{Pages}</span></h5>
@@ -157,7 +166,7 @@ export const ProductDetailsPage = () => {
         </div>
         <div className="buttons">
             {
-          isInCart ? <button className='btn' style={{}} onClick={()=> navigate('/cart')}>
+          isInCart ? <button className='btn' id="detail-pg-cart" style={{}} onClick={()=> navigate('/cart')}>
                     <FaShoppingCart/><span> Go to Cart </span>
                 </button>
               :
@@ -166,12 +175,12 @@ export const ProductDetailsPage = () => {
              </button> 
         } 
             {
-        isInWishlist ? <button className='btn' style={{}} onClick={()=> handleWishlist(product)}>
-                    <AiOutlineHeart/><span> Remove From Wishlist </span>
+        isInWishlist ? <button className='btn btn--wishlist' id="detail-pg-wishlist" style={{}} onClick={()=> handleWishlist(product)}>
+                    <AiOutlineHeart/><span> Move From Wishlist </span>
                 </button>
               :
-              <button className='btn' style={{}} onClick={()=>handleWishlist(product)}>
-              <AiOutlineHeart/><span> Add to Wishlist</span>
+              <button className='btn btn--wishlist' id="detail-pg-wishlist" style={{}} onClick={()=>handleWishlist(product)}>
+              <AiOutlineHeart/><span > Add to Wishlist</span>
              </button> 
         }
 

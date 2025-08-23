@@ -64,7 +64,7 @@ export function HomePage() {
                         <div className="detail-box text-center">
                           <div className="category-title">{categoryName}</div>
                           <img className="feature-img"src={feature} alt="feature-img"/>
-                          <p className="paragraph-sm">{description}</p>
+                          <p className="paragraph-category-sm">{description}</p>
                         </div>
                       </div>
                     );
