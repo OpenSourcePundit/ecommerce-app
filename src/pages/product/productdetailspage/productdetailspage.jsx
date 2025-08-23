@@ -98,7 +98,7 @@ export const ProductDetailsPage = () => {
 
           <div className="details-container">
             <div className="title">
-              <h3>{title}</h3>
+              <div>{title}</div>
             </div>
             <div className="rating">
               <h4>{rating}</h4>
@@ -133,9 +133,10 @@ export const ProductDetailsPage = () => {
                 <div className="tag">
                     <h5><BsTagFill/></h5><p>Inclusive of All Taxes</p>
                 </div>
-                <div className="tag">
-                    <h5><BsTagFill/></h5><p>Cash On Delivery {cashOnDelivery ?"Available":"Unavailabe" }</p>
-                </div>
+                {cashOnDelivery && <div className="tag">
+                    <h5><BsTagFill/></h5><p>Cash On Delivery</p>
+                </div>}
+                
             </div>
             <div className="page-section">
                 <h5>Pages: <span>{Pages}</span></h5>
@@ -174,11 +175,11 @@ export const ProductDetailsPage = () => {
              </button> 
         } 
             {
-        isInWishlist ? <button className='btn' id="detail-pg-wishlist" style={{}} onClick={()=> handleWishlist(product)}>
-                    <AiOutlineHeart/><span> Remove From Wishlist </span>
+        isInWishlist ? <button className='btn btn--wishlist' id="detail-pg-wishlist" style={{}} onClick={()=> handleWishlist(product)}>
+                    <AiOutlineHeart/><span> Move From Wishlist </span>
                 </button>
               :
-              <button className='btn' id="detail-pg-wishlist" style={{}} onClick={()=>handleWishlist(product)}>
+              <button className='btn btn--wishlist' id="detail-pg-wishlist" style={{}} onClick={()=>handleWishlist(product)}>
               <AiOutlineHeart/><span > Add to Wishlist</span>
              </button> 
         }
