@@ -17,7 +17,7 @@
     border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
-     background-color: #e0c375;
+     background-color: var(--bg-color-yellow);
 
 }
 .card:hover{
@@ -79,11 +79,11 @@ img{
 }
 .actual-price{
     text-decoration: line-through;
-    color: red;
+    color: var(--primary-red);
     font-size: 0.7em;
 }
 .name{
-    text-shadow: 1px 1px 3px var(--btn-purple);
+    text-shadow: 1px 1px 3px var(--primary-yellow);
     width:100%;
     font-size:1.3em;
     display: flex;
@@ -112,29 +112,31 @@ img{
 .cart-button .btn{
     width: 100%;
     height:100%;
-    background-color: var(--btn-purple);
-    color: #fff;
+    background-color: var(--primary-yellow);
+    color: black;
     font-size: 1rem;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: solid 2px white;
+    border: dashed 0.1rem #cc9600;
     
 }
 .cart-button :hover{
     cursor: pointer;
 }
 .wishlist-button{
-    height: 30px;
-    width: 30px;
+    height: 2rem;
+    width: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     position: absolute;
-    top: 20px;
-    right: 15px;
-    background-color: rgb(219, 20, 20);
+    top: 1rem;
+    right: 1rem;
+    background-color: var(--primary-red);
     color: #fff;
     cursor: pointer;
 }
@@ -148,7 +150,7 @@ img{
             border: 2px solid rgb(142, 147, 153);
             background-color: #fff;
             border-radius: 50%;
-            color: red;
+            color: var(--primary-red);
                 
 
 }
@@ -158,13 +160,14 @@ img{
     height: 100%;
     padding-top: 3px;
     color: #fff;
-    background-color: red;
+    background-color: var(--primary-red);
     border: none;
     border-radius: 50%;
 }
 .btn.btn-secondary{
     background-color: var(--btn-green);
     color: #fff;
+    border: solid 2px white;
 }
 
 /* 
@@ -190,16 +193,14 @@ img{
         padding-right: 1rem;
 
     }
-    .name{
-        font-size:1.5em;
-        text-decoration: underline;
-    }
+    
     .cart-button .btn{
         font-size: 1rem;
         width: fit-content;
         display: flex;
         justify-self: center;
         padding: 1rem;
+        border: solid 2px white;
     }
     .img img{
         box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.927);

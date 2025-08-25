@@ -180,12 +180,12 @@ export const ProductDetailsPage = () => {
              </button> 
         } 
             {
-        isInWishlist ? <button className='btn ' id="detail-pg-wishlist" style={{}} onClick={()=> handleWishlist(product)}>
-                    <AiOutlineHeart/><span> Move From Wishlist </span>
+        isInWishlist ? <button className='btn un-wishlist' id="detail-pg-wishlist" onClick={()=> handleWishlist(product)}>
+                    <AiOutlineHeart/><span> Un-Wishlist </span>
                 </button>
               :
               <button className='btn ' id="detail-pg-wishlist" style={{}} onClick={()=>handleWishlist(product)}>
-              <AiOutlineHeart/><span > Add to Wishlist</span>
+              <AiOutlineHeart/><span >Wishlist</span>
              </button> 
         }
 
