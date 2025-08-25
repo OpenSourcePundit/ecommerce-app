@@ -32,7 +32,9 @@ export const ProductCard = ({ prod }) => {
     Language,
   } = prod;
 
-  const handleAddCart = async (prod) => {
+  const handleAddCart = async (e,prod) => {
+    e.stopPropagation();
+
     if(isLogIn)
     {try {
       const prod1 = {
@@ -62,7 +64,9 @@ export const ProductCard = ({ prod }) => {
 
   const isInWishlist = wishlist.some((item) => item._id === prod._id);
 
-  const handleWishlist = async (prod) => {
+  const handleWishlist = async (e,prod) => {
+    e.stopPropagation();
+
    if(isLogIn) {try {
       const encodedToken = localStorage.getItem("encodedToken");
       const response = await fetch(
@@ -92,38 +96,44 @@ export const ProductCard = ({ prod }) => {
 
   return (
     // <div className="container">
-    <div className="card" >
-      <div className="img" onClick={()=>navigate(`./${_id}`)}>
-        <img src={prod.image} alt="" width="auto" height="200px" />
+    <div className="card" onClick={()=>navigate(`./${_id}`)}>
+      <div className="img" >
+        <img src={prod.image} alt="" width="auto" height="auto" />
       </div>
       <div className="content">
         <div className="review-container">
           <div className="stars">
-            <span>Reviews</span>
+            {/* <span>Reviews</span> */}
             {[1, 2, 3, 4, 5].map((i) =>
               i <= prod.rating ? (
-                <FontAwesomeIcon icon={faStar} style={{ color: "#f08c00" }} />
+                <FontAwesomeIcon icon={faStar} style={{ color: "#ff5e00ff" }} />
               ) : (
-                <FontAwesomeIcon icon={faStar} />
+                <FontAwesomeIcon icon={faStar}  />
               )
             )}
           </div>
         </div>
-        <h5 className="price">Rs.{prod.newPrice}</h5>
+        
         <div className="name">{prod.title}</div>
+        <div className="price">
+          <span className="new-price"> &#8377;{prod.newPrice}</span>
+          &nbsp;
+          <span className="actual-price"> &#8377;{prod.price}</span>
+
+        </div>
         <div className="description">
           <p>Author:{prod.author}</p>
           <p>Category{prod.categoryName}</p>
-          <p>Original Price: Rs.{prod.price}</p>
+          <p>Language:{prod.Language}</p>
         </div>
       </div>
       <div className="button-container">
         <div className="cart-button">
           {isInCart ? (
-            <button
-              className="btn"
-              style={{ backgroundColor:"brown"}}
-              onClick={() => navigate("/cart")}
+            <button 
+              className="btn btn-secondary"
+              onClick={(e) =>{e.stopPropagation();
+ navigate("/cart")}}
             >
               <FaShoppingCart />
               <span> Go to Cart </span>
@@ -132,7 +142,7 @@ export const ProductCard = ({ prod }) => {
             <button
               className="btn"
               style={{}}
-              onClick={() => handleAddCart(prod)}
+              onClick={(e) => handleAddCart(e,prod)}
             >
               <FaShoppingCart />
               <span> Add to Cart</span>
@@ -154,13 +164,13 @@ export const ProductCard = ({ prod }) => {
           {isInWishlist ? (
             <button
               className="remove-heart"
-              onClick={() => handleWishlist(prod)}
+              onClick={(e) => handleWishlist(e,prod)}
             >
               {" "}
               <AiFillHeart />{" "}
             </button>
           ) : (
-            <button className="add-heart" onClick={() => handleWishlist(prod)}>
+            <button className="add-heart" onClick={(e) => handleWishlist(e,prod)}>
               {" "}
               <AiFillHeart />{" "}
             </button>
@@ -169,5 +179,6 @@ export const ProductCard = ({ prod }) => {
       </div>
     </div>
     // </div>
+    
   );
 };

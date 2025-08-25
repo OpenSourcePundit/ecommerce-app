@@ -1,7 +1,12 @@
 :root{
   --primary-yellow : #cc9600 ;
+  --bg-color-yellow: #e0c375;
   --primary-black : black;
+  --btn-purple: rgb(73, 28, 114);
+  --btn-green: rgb(11, 71, 13);
+   font-size: 16px;
 }
+
 
 .App {
   text-align: center;
