@@ -138,11 +138,16 @@ export const ProductDetailsPage = () => {
                 </div>}
                 
             </div>
-            <div className="page-section">
-                <h5>Pages: <span>{Pages}</span></h5>
-            </div>
+               
+           
             
             <div className="highlights-section">
+              <div className="highlight">
+                    
+                        <p className="auth">Pages: </p>
+                        <p className="cate">{Pages}</p>
+                    
+                </div>
                 <div className="highlight">
                     
                         <p className="auth">Author: </p>
@@ -166,20 +171,20 @@ export const ProductDetailsPage = () => {
         </div>
         <div className="buttons">
             {
-          isInCart ? <button className='btn' id="detail-pg-cart" style={{}} onClick={()=> navigate('/cart')}>
+          isInCart ? <button className='btn btn-secondary' id="detail-pg-cart" onClick={()=> navigate('/cart')}>
                     <FaShoppingCart/><span> Go to Cart </span>
                 </button>
               :
-              <button className='btn' style={{}} onClick={()=>handleAddCart(product)}>
+              <button className='btn' id="detail-pg-cart"  onClick={()=>handleAddCart(product)}>
               <FaShoppingCart/><span> Add to Cart</span>
              </button> 
         } 
             {
-        isInWishlist ? <button className='btn btn--wishlist' id="detail-pg-wishlist" style={{}} onClick={()=> handleWishlist(product)}>
+        isInWishlist ? <button className='btn ' id="detail-pg-wishlist" style={{}} onClick={()=> handleWishlist(product)}>
                     <AiOutlineHeart/><span> Move From Wishlist </span>
                 </button>
               :
-              <button className='btn btn--wishlist' id="detail-pg-wishlist" style={{}} onClick={()=>handleWishlist(product)}>
+              <button className='btn ' id="detail-pg-wishlist" style={{}} onClick={()=>handleWishlist(product)}>
               <AiOutlineHeart/><span > Add to Wishlist</span>
              </button> 
         }
