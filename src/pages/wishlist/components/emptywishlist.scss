@@ -1,18 +1,21 @@
 
-.empty-cart-container{
+.empty-wishlist-container{
     width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
 
     >.container{
-        width: 50%;
+        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        >.cart-icon{
-            width: 25%;
-            height: 25%;
+    background-color: var(--bg-color-yellow);
+    border-radius: 10px;
+
+        >.wishlist-icon{
+            width: 200px;
+            height: 200px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -23,7 +26,7 @@
         }
         >p{
             font-weight: 500;
-            font-size: 20px;
+            font-size: 1rem;
         }
         >button{
             margin-top: 2rem;
@@ -33,8 +36,8 @@
             outline: none;
             display: flex;
             justify-content: center;
-            background-color: #295C89;
-            color: #fff;
+            background-color: var(--primary-yellow);
+            color: black;
             border-radius: 10px;
             cursor: pointer;
             >span{
@@ -42,4 +45,21 @@
             }
         }
     }
+}
+@media screen and (max-width: 600px) {
+    .empty-wishlist-container{
+        >.container{
+            >.wishlist-icon{
+                width: 100px;
+                height: 100px;
+            }
+            >p{
+                font-size: 0.9rem;
+            }
+            >button{
+                font-size: 16px;
+            }
+        }
+    }
+    
 }
