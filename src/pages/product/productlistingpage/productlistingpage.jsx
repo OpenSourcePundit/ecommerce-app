@@ -61,7 +61,7 @@ export const ProductListingPage = () => {
   return (
     <div className="main">
       <ProductFilter/>
-      <LoadingFallBack isLoading={searchLoad}> :
+      <LoadingFallBack isLoading={searchLoad}>
       <div className="product-section">
         <div className="search-result"> {finalData?.length > 0 ? (
             <>

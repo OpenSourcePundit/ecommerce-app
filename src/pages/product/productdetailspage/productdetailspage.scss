@@ -171,14 +171,14 @@
       > .btn {
         padding: 0.5rem 1.5rem;
         width: auto;
-        background-color: var(--btn-purple);
-        color: #fff;
+        background-color: var(--primary-yellow);
+    color: black;
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 1rem;
         margin: 0.3rem;
-        border: dashed 0.1rem #cc9600;
+        border: solid 0.1rem white;
         border-radius: 10px;
         &:hover {
           opacity: 0.8;
@@ -191,6 +191,7 @@
         cursor: pointer;
         background-color: var(--btn-green);
         color: #fff;
+    border: solid 2px white;
         &:hover {
           opacity: 0.8;
         }
