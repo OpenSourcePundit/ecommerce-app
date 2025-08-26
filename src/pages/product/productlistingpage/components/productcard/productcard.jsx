@@ -33,9 +33,10 @@ export const ProductCard = ({ prod }) => {
   } = prod;
 
   const handleAddCart = async (e,prod) => {
+    
     e.stopPropagation();
-
     if(isLogIn)
+      
     {try {
       const prod1 = {
         product: prod,
@@ -122,9 +123,9 @@ export const ProductCard = ({ prod }) => {
 
         </div>
         <div className="description">
-          <p>Author:{prod.author}</p>
-          <p>Category{prod.categoryName}</p>
-          <p>Language:{prod.Language}</p>
+          <p><span>Author :</span> {prod.author}</p>
+          <p><span>Category :</span> {prod.categoryName}</p>
+          <p><span>Language :</span> {prod.Language}</p>
         </div>
       </div>
       <div className="button-container">

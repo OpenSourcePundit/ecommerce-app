@@ -144,25 +144,25 @@ export const ProductDetailsPage = () => {
             <div className="highlights-section">
               <div className="highlight">
                     
-                        <p className="auth">Pages: </p>
+                        <p className="auth">Pages :&nbsp;  </p>
                         <p className="cate">{Pages}</p>
                     
                 </div>
                 <div className="highlight">
                     
-                        <p className="auth">Author: </p>
+                        <p className="auth">Author :&nbsp;  </p>
                         <p className="cate">{author}</p>
                     
                 </div>
                 <div className="highlight">
                     
-                        <p className="auth">Category: </p>
+                        <p className="auth">Category :&nbsp;  </p>
                         <p className="cate">{categoryName}</p>
                     
                 </div>
                 <div className="highlight">
                     
-                        <p className="auth">Language: </p>
+                        <p className="auth">Language :&nbsp;  </p>
                         <p className="cate">{Language}</p>
                     
                 </div>
