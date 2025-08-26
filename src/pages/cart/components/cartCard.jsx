@@ -139,10 +139,10 @@ export const SingleCartCard = ({card, index}) => {
                 <button value={"increment"} onClick={(e)=> handleQty(e, card)}>+</button>
             </div>
             <div className="card-btn">
-                <button className='remove-btn' onClick={()=> handleRemove(card)}  >Remove</button>
+                <button className='remove-btn btn' onClick={()=> handleRemove(card)}  >Remove</button>
                 {
-                  isInWishlist ? <button className='move-btn' onClick={()=>navigate('/wishlist')} >Go to wishlist</button>
-                               : <button className='move-btn' onClick={()=>handleMoveToWishlist(card)} >Move to wishlist</button>
+                  isInWishlist ? <button className='move-btn btn' onClick={()=>navigate('/wishlist')} >Wishlist</button>
+                               : <button className='move-btn btn' onClick={()=>handleMoveToWishlist(card)} >Add to wishlist</button>
                 }
             </div>
         </div>

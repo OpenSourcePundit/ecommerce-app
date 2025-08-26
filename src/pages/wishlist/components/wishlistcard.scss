@@ -71,13 +71,13 @@
                 >.wish-move-btn{
                     height: 35px;
                     padding: 0.5rem 1rem;
-                    background-color: rgb(168, 35, 35);
+                    background-color: var(--primary-red);
                     color: #fff;
                     font-size: 12px;
                     border-radius: 5px;
                     border: none;
                     &:hover{
-                        background-color: rgb(187, 67, 67);
+                        background-color: var(--primary-red);
                         cursor: pointer;
                     }
                 }
@@ -116,15 +116,15 @@
             flex-direction: row;
             align-items: center;
             gap: 0.5rem;
-            >.wish-remove-btn{
+            >.wish-remove-btn.btn{
                 width: 50%;
                 height: 35px;
-                font-size: 14px;                    
+                font-size: 12px;                    
             }
-            >.wish-move-btn{
+            >.wish-move-btn.btn{
                 width: 50%;
                 height: 35px;
-                font-size: 14px;                    
+                font-size: 12px;                    
             }
            }
         }
@@ -161,12 +161,12 @@
             flex-direction: row;
             align-items: center;
             gap: 0.5rem;
-            >.wish-remove-btn{
+            >.wish-remove-btn.btn {
                 width: 50%;
                 height: 30px;
                 font-size: 12px;                    
             }
-            >.wish-move-btn{
+            >.wish-move-btn.btn {
                 width: 50%;
                 height: 30px;
                 font-size: 12px;                    
