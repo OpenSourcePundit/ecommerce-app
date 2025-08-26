@@ -189,22 +189,24 @@ img{
     }
 
     .card{
-       width: 100vw;
+       width: 17.5rem;
+       margin: 1rem 0rem;
 
     }
     .content{
         width: 100%;
-        padding-left: 2rem;
+        padding-left: 1rem;
         padding-right: 1rem;
 
     }
     
     .cart-button .btn{
         font-size: 1rem;
-        width: fit-content;
+        /* width: fit-content; */
         display: flex;
         justify-self: center;
         padding: 1rem;
+        margin-top: 0.5rem;
         border: solid 2px white;
     }
     .img img{

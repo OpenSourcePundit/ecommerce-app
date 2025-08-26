@@ -29,3 +29,61 @@
     align-items: center;
     
 }
+.filter-toggle-btn {
+  display: none;
+  position: alsolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1001;
+  height: 50px;
+  width: 50px;
+  background: var(--primary-yellow);
+  color: black;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 0px 5px 5px 5px;
+  cursor: pointer;
+}
+
+/* Wrapper for filter sidebar */
+.filter-wrapper {
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Desktop view: filter always visible */
+@media screen and (min-width: 801px) {
+  .filter-wrapper {
+    transform: translateX(0);
+    width: 20%;
+  }
+    
+}
+
+/* Mobile view: filter hidden initially */
+@media screen and (max-width: 800px) {
+  .filter-toggle-btn {
+    display: block;
+  }
+  
+
+  .filter-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px; /* sidebar width */
+    height: max-content;
+    background: var(--bg-color-yellow);
+    box-shadow: rgba(0, 0, 0, 0.3) 2px 0px 10px;
+    transform: translateX(-100%);
+    z-index: 1000;
+    overflow-y: auto;
+  }
+
+  .filter-wrapper.open {
+    transform: translateX(0);
+  }
+  .main .product-section {
+        width: 100%;
+        padding-left: 0rem;
+    }
+}
