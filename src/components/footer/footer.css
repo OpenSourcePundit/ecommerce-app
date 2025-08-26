@@ -41,7 +41,7 @@
 .contact-section h3{
           padding: 1rem 0;
           text-align: center;
-          text-shadow: 2px 2px 5px #cc9600;
+          text-shadow: 2px 2px 5px var(--primary-yellow);
         }
 .contact{
           display: flex;

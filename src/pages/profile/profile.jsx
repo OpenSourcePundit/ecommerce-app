@@ -1,218 +1,204 @@
-import React, { useEffect } from 'react'
-import { useState, useContext } from 'react';
-import {FaEdit} from "react-icons/fa";
-import {MdDelete} from "react-icons/md";
-import { NavLink } from 'react-router-dom';
-
+import React, { useState, useContext } from "react";
+import { FaEdit } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
+import { NavLink } from "react-router-dom";
+import { FaLocationDot } from "react-icons/fa6";
+import { TbLogout } from "react-icons/tb";
+import { CgProfile } from "react-icons/cg";
 import "./profile.scss";
-import { DataContext } from '../../Contexts/dataContext';
-import { AuthContext } from '../../Contexts/authcontext/authcontext';
+import { DataContext } from "../../Contexts/dataContext";
+import { AuthContext } from "../../Contexts/authcontext/authcontext";
 
 export const Profile = () => {
-    const {dataDispatch, address} = useContext(DataContext);
-    const {isLogIn, setIsLogIn} = useContext(AuthContext);
+  const { dataDispatch, address } = useContext(DataContext);
+  const { setIsLogIn } = useContext(AuthContext);
 
-    console.log(address);
-    
-    const[isEdit, setIsEdit] = useState({isEdit: true, index:0});
-    const [Add_name, setAddName] = useState("");
-    const [Hno, setHno] = useState("");
-    const [street, setStreet] = useState("");
-    const [city, setCity] = useState("");
-    const [state, setState] = useState("");
-    const [Phone, setPhone] = useState("");
-    const [Pin, setPin] = useState("");
+  const [profileTab, setProfileTab] = useState("profile");
+  const [editAddress, setEditAddress] = useState(false);
+  const [isEdit, setIsEdit] = useState({ status: false, index: null });
 
+  const [formData, setFormData] = useState({
+    Add_name: "",
+    Hno: "",
+    street: "",
+    city: "",
+    state: "",
+    Phone: "",
+    Pin: "",
+  });
 
-   
-    const [profile, setProfile] = useState("profile");
-    const [editAddress, setEditAddress] = useState(false);
+  const handleInputChange = (e) => {
+    setFormData((prev) => ({ ...prev, [e.target.id]: e.target.value }));
+  };
 
-    const addEditAddress = (obj) =>{
-        
-        setEditAddress(true);
-        console.log("obj",obj);
-        if(isEdit){
-                setIsEdit({index: obj.index});
-                setIsEdit(obj);
-                console.log("isEdit",isEdit);
-                setAddName(address[obj.index].Add_name); 
-                setHno(address[obj.index].Hno);
-                setStreet(address[obj.index].street); 
-                setCity(address[obj.index].city); setState(address[obj.index].state); setPhone(address[obj.index].Phone);
-                setPin(address[obj.index].Pin);
-               
-        }
-        else{  
-                setAddName(""); 
-                setHno("");
-                setStreet(""); 
-                setCity(""); setState(""); setPhone(""); setPin("");
-        }
-     
-    }
-  
+  const openAddressForm = (obj) => {
+    setEditAddress(true);
+    setIsEdit(obj);
 
-
-    const handleSubmitBtn = ()=>{
-        if(isEdit.isEdit)
-        {
-            const newAddress = [...address];
-            newAddress.splice(isEdit.index, 1, {Add_name: Add_name, Hno: Hno, street: street, city: city, state: state, Pin: Pin, Phone: Phone})
-            setEditAddress(false);
-            dataDispatch({
-                type:"editAddress",
-                payload: newAddress,
-            })
-        }
-        else{
-            const addr = {Add_name: Add_name, Hno: Hno, street: street, city: city, state: state, Pin: Pin, Phone: Phone};
-            console.log("yha tk pahuch gye", isEdit.isEdit, addr);
-            setEditAddress(false);
-            
-            dataDispatch({
-                type:"update-address",
-                payload : addr,
-            })
-            
-        }
-    }
-
-    const handleLogout = ()=>{
-        setIsLogIn(false);
-
-        localStorage.removeItem("encodedToken");
-        localStorage.removeItem("email");
-        localStorage.removeItem("password");
-        localStorage.removeItem("name")
-        dataDispatch({
-          type:"logout",
-          
-        })
-      }
-
-      
-      const getActiveId = ({ isActive }) => ({
-        color: isActive ? "white" : "white",
-        backgroundColor: isActive ? "#306ca0" : "#af239a",
+    if (obj.status) {
+      const current = address[obj.index];
+      setFormData({ ...current });
+    } else {
+      setFormData({
+        Add_name: "",
+        Hno: "",
+        street: "",
+        city: "",
+        state: "",
+        Phone: "",
+        Pin: "",
       });
+    }
+  };
 
-      const DeleteAddress = (index)=>{
-        const newAddress = address.filter((add, ind)=> index !== ind)
-        dataDispatch({
-            type:"add-address",
-            payload: newAddress,
-        })
-      }
+  const handleSubmit = () => {
+    if (isEdit.status) {
+      const updated = [...address];
+      updated.splice(isEdit.index, 1, { ...formData });
+      dataDispatch({ type: "editAddress", payload: updated });
+    } else {
+      dataDispatch({ type: "update-address", payload: { ...formData } });
+    }
+    setEditAddress(false);
+  };
 
+  const handleDelete = (index) => {
+    const filtered = address.filter((_, ind) => ind !== index);
+    dataDispatch({ type: "add-address", payload: filtered });
+  };
+
+  const handleLogout = () => {
+    setIsLogIn(false);
+    ["encodedToken", "email", "password", "name"].forEach((item) =>
+      localStorage.removeItem(item)
+    );
+    dataDispatch({ type: "logout" });
+  };
+
+  const getActiveId = ({ isActive }) => ({
+    color: "white",
+    backgroundColor: isActive ? "#cc9600" : "#af239a",
+  });
 
   return (
-    <div className='container'>
-        {
-            editAddress && <div className='address-container'>
-            <h1> Address </h1>
-            <div className="address">
-                <label htmlFor="Add_name">Enter Name:</label>
-              <input
-                type="text" value={Add_name} id="Add_name" placeholder="Enter Name" onChange={(e) => setAddName(e.target.value)}
-             />
-              <label htmlFor="Hno">HouseNo:</label>
-             <input
-                type="text" value={Hno}  id="Hn" placeholder="House No" onChange={(e) => setHno(e.target.value)}
-             />
-              <label htmlFor="street">Street:</label>
-             <input
-                type="text" value={street} id="street" placeholder="Street" onChange={(e) => setStreet(e.target.value)}
-             />
-              <label htmlFor="city">City:</label>
-             <input
-                type="text" value={city}  id="city" placeholder="City" onChange={(e) => setCity(e.target.value)}
-             />
-              <label htmlFor="state">State:</label>
-             <input
-                type="text" value={state}  id="state" placeholder="State" onChange={(e) => setState(e.target.value)}
-             />
-              <label htmlFor="Pin">Pin:</label>
-             <input
-                type="text" value={Pin}  id="Pin" placeholder="Pin" onChange={(e) => setPin(e.target.value)}
-             />
-              <label htmlFor="Phone">Mobile:</label>
-             <input
-                type="text" value={Phone} id="Phone" placeholder="Phone No" onChange={(e) => setPhone(e.target.value)}
-             />
-            </div>
-             <button  type='submit' onClick={()=>handleSubmitBtn()} >Submit</button>
-            <button onClick={()=>setEditAddress(false)}>Cancel</button>
-            </div>
-        }
-
-
+    <div className="container">
+      {editAddress && (
+        <div className="address-container">
+          <p className="address-container-heading">Add New Address</p>
+          <div className="address">
+            {Object.keys(formData).map((field) => (
+              <React.Fragment key={field}>
+                <label htmlFor={field}>{field} :</label>
+                <input
+                  type="text"
+                  id={field}
+                  value={formData[field]}
+                  placeholder={`Enter ${field}`}
+                  onChange={handleInputChange}
+                />
+              </React.Fragment>
+            ))}
+          </div>
+          <button type="submit" onClick={handleSubmit}>
+            Submit
+          </button>
+          <button onClick={() => setEditAddress(false)}>Cancel</button>
+        </div>
+      )}
 
       <div className="profile-main">
         <div className="button-section">
-            <NavLink className="profile"  style={getActiveId} onClick={()=> setProfile("profile")} >
-                <span>Profile</span>
-            </NavLink>
-            <NavLink className="address" style={getActiveId} onClick={()=> setProfile("address")}>
-                <span>Adress</span>
-            </NavLink>
-            <NavLink className="logout" style={getActiveId} onClick={handleLogout}>
-                <span>Logout</span>
-            </NavLink>
+          <NavLink
+            className="profile"
+            style={getActiveId}
+            onClick={() => setProfileTab("profile")}
+          >
+            <span>Profile</span>
+            <CgProfile className="profile-icon"/>
+          </NavLink>
+          <NavLink
+            className="address"
+            style={getActiveId}
+            onClick={() => setProfileTab("address")}
+          >
+            <span>Address</span>
+            <FaLocationDot className="profile-icon"/>
+          </NavLink>
+          <NavLink className="logout" style={getActiveId} onClick={handleLogout}>
+            <span>Logout</span>
+            <TbLogout className="profile-icon"/>
+          </NavLink>
         </div>
+
         <div className="image-section">
-            <div className="image-container" >
-            <img src="https://i.ibb.co/d5tcPjt/profile.png" alt="logo" width="30px" height="30px"  />
-            </div>
+          <div className="image-container">
+            <img
+              src="https://i.ibb.co/d5tcPjt/profile.png"
+              alt="logo"
+              width="30"
+              height="30"
+            />
+          </div>
         </div>
+
         <div className="details-section">
-           
-            {
-                profile === "profile" ? <div className="profile-container">
-                    <div className="profile-section">
-                        <p>Name: <span>{localStorage.getItem( "name")}</span></p>
-                        <p>Email: <span>{localStorage.getItem("email")}</span></p>
-                    </div>
-                    </div> 
-                
-                : 
-                    <div className="address-section">
-                    <div className='add-address' >
-                        <button onClick={()=> addEditAddress({isEdit:false, index:0}) } > + Add Address</button>
-                    </div>
-                
-               {
-                 address.map(({Add_name, Hno, street, city, state, Phone, Pin}, index)=> {
-                    return(
-                        
-                        <div className='address'>
-                            <div className='home'>
-                            <p>{Add_name},</p>
-                            <p>{Hno},{" "}{street}</p>
-                            <p>{city},{" "}{state}</p>
-                            <p>{Pin},{" "}{Phone}</p>
-                            </div>
-                            <div className='btn-section'>
-                                <div style={{color:"lightgreen"}} onClick={()=> addEditAddress({isEdit:true, index:index})} >
-                                    <FaEdit/>
-                                </div>
-                                <div onClick={()=> DeleteAddress(index)} style={{color:"red"}}>
-                                    <MdDelete/>
-                                </div>
-                            </div>
-                        </div>
-                    )
-                })
-               }
+          {profileTab === "profile" ? (
+            <div className="profile-container">
+              <div className="profile-section">
+                <p>
+                  Name: <span className="span-name">{localStorage.getItem("name")}</span>
+                </p>
+                <p>
+                  Email: <span>{localStorage.getItem("email")}</span>
+                </p>
+              </div>
             </div>
-            }
-            
+          ) : (
+            <div className="address-section">
+              <div className="add-address">
+                <button onClick={() => openAddressForm({ status: false })}>
+                   Add New Address
+                </button>
+              </div>
+
+              {address.map((addr, index) => (
+                <div className="address" key={index}>
+                  <div className="home">
+                    <p>{addr.Add_name},</p>
+                    <p>
+                      {addr.Hno}, {addr.street}
+                    </p>
+                    <p>
+                      {addr.city}, {addr.state}
+                    </p>
+                    <p>
+                      {addr.Pin}, {addr.Phone}
+                    </p>
+                  </div>
+                  <div className="btn-section">
+                    <div
+                      style={{ color: "green" }}
+                      onClick={() =>
+                        openAddressForm({ status: true, index: index })
+                      }
+                    >
+                      <FaEdit />
+                    </div>
+                    <div
+                      onClick={() => handleDelete(index)}
+                      style={{ color: "red" }}
+                    >
+                      <MdDelete />
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
-
-
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Profile;
