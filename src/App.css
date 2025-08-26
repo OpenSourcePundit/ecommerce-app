@@ -12,6 +12,7 @@
 .App {
   text-align: center;
   font-size: medium;
+  min-height: 100vh;
 }
 
 

@@ -1,130 +1,215 @@
+.cart-card {
+  width: 25rem;
+  height: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 1rem;
+  background-color: var(--bg-color-yellow);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 15px;
 
-
-.cart-card{
-    width: 80%;
-    height: 230px;
+  > .card-container {
+    width: 100%;
+    height: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items:center;
-    margin: 1rem 0px;
-    background-color: #fff;
-    
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 15px;
-    >.card-container{
+    padding: 1rem 0px;
+    justify-content: space-around;
+    > .card-image {
+      width: 25%;
+      height: 170px;
+
+      > img {
         width: 100%;
         height: 100%;
-        display: flex;
-        padding: 1rem 0px;
-        justify-content: space-around;
-        >.card-image{
-            width: 25%;
-            height: 170px; 
-            >img{
-                width: 100%;
-                height: 100%;
-                border-radius: 5px;
-            }
-        }
-        >.card-details{
-            width: 60%;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content:flex-start;
-           >.cart-title{
-            text-transform: capitalize;
-            font-size: 18px;
-            padding: 0.3rem 0;
-            font-weight: 500;
-           }
-            >.cart-author{
-            color: #212121;
-            font-weight: 400;
-            font-size: 14px;
-            
-           }
-           >.price-details{
-            display: flex;
-            align-items: center;
-            height: 22px;
-            margin-top: 8px;
-            
-
-            >.cprice >h4{
-                color: #212121;
-                font-size: 16px;
-            }
-            >.oprice >h4{
-                font-size: 16px;
-                padding: 0 0.75rem;
-                font-weight: 400;
-                color: rgb(135, 135, 135);
-                text-decoration: line-through;
-            }
-            >.discount >h4{
-                font-size: 12px;
-                color: #388E3C;
-            }
-
-        }
-        >.card-quantity{
-            width: 30%;
-            margin-top: 10px;
-            display: flex;
-            justify-content: space-between;
-            >button{
-                border: none;
-                cursor: pointer;
-                color: #fff;
-                background-color:#295C89;
-                padding: 0.2rem 0.5rem;
-                outline: none;
-                border-radius: 3px;
-                &:hover{
-                    background-color: #306ca0;
-                }
-                }
-
-            }
-
-            >.card-btn{
-                width: 100%;
-                padding: 1.5rem 0;
-                display: flex;
-                justify-content: space-between;
-                >.remove-btn{
-                    width: 40%;
-                    height: 35px;
-                    background-color: #295C89;
-                    color: #fff;
-                    font-size: 12px;
-                    
-                    border-radius: 5px;
-                    border: none;
-                    &:hover{
-                        background-color: #306ca0;
-                        cursor: pointer;
-                    }
-
-                }
-                >.move-btn{
-                    height: 35px;
-                    padding: 0 0.5rem;
-                    background-color: rgb(168, 35, 35);
-                    color:#fff;
-                    font-size: 12px;
-                   
-                    border-radius: 5px;
-                    border: none;
-                    &:hover{
-                        background-color: rgb(187, 67, 67);
-                        cursor: pointer;
-                    }
-                }
-            }
-        }
+        border-radius: 5px;
+        box-shadow: 4px 4px 20px;
+      }
     }
-    
+    > .card-details {
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      > .cart-title {
+        text-transform: capitalize;
+        font-size: 18px;
+        padding: 0.3rem 0;
+        font-weight: 500;
+      }
+      > .cart-author {
+        color: #212121;
+        font-weight: 400;
+        font-size: 14px;
+        > span {
+          color: #295c89;
+        }
+      }
+      > .price-details {
+        display: flex;
+        align-items: center;
+        height: 22px;
+        margin-top: 8px;
+
+        > .cprice > h4 {
+          color: #212121;
+          font-size: 16px;
+        }
+        > .oprice > h4 {
+          font-size: 16px;
+          padding: 0 0.75rem;
+          font-weight: 400;
+          color: rgb(135, 135, 135);
+          text-decoration: line-through;
+        }
+        > .discount > h4 {
+          font-size: 12px;
+          color: #388e3c;
+        }
+      }
+      > .card-quantity {
+        width: 30%;
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+        > button {
+          border: none;
+          cursor: pointer;
+          color: #fff;
+          background-color: #295c89;
+          padding: 0.2rem 0.5rem;
+          outline: none;
+          border-radius: 3px;
+          &:hover {
+            background-color: #306ca0;
+          }
+        }
+      }
+
+      > .card-btn {
+        width: 100%;
+        padding: 2.5rem 0 0 0;
+        display: flex;
+        justify-content: space-between;
+        > .remove-btn {
+          width: 40%;
+          height: 35px;
+          background-color: var(--primary-yellow);
+          color: var(--primary-black);
+          font-size: 12px;
+          border: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          &:hover {
+            opacity: 0.8;
+            cursor: pointer;
+          }
+        }
+        > .move-btn {
+          height: 35px;
+          padding: 0.5rem 1rem;
+          background-color: var(--primary-red);
+          color: #fff;
+          font-size: 12px;
+          border-radius: 5px;
+          border: none;
+          &:hover {
+            background-color: var(--primary-red);
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .wish-card {
+    width: 80%;
+    height: auto;
+    margin: 0.5rem 0.5rem;
+    > .wish-card-container {
+      flex-direction: column;
+      align-items: center;
+      > .wish-card-image {
+        width: 50%;
+        height: auto;
+        > img {
+          width: 80%;
+          height: auto;
+        }
+      }
+      > .wish-card-details {
+        width: 70%;
+        margin-top: 1rem;
+
+        // text-align: center;
+        > .wish-card-title {
+          font-size: 16px;
+        }
+        > .wish-card-btn {
+          flex-direction: row;
+          align-items: center;
+          gap: 0.5rem;
+          > .wish-remove-btn.btn {
+            width: 50%;
+            height: 35px;
+            font-size: 14px;
+          }
+          > .wish-move-btn.btn {
+            width: 50%;
+            height: 35px;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 400px) {
+  .cart-card {
+    width: 90%;
+    height: auto;
+    margin: 0.5rem 0.5rem;
+    > .card-container {
+      width: 100%;
+      align-items: center;
+      > .card-image {
+        width: 70%;
+        height: auto;
+        > img {
+          width: 80%;
+          height: auto;
+        }
+      }
+      > .card-details {
+        width: 90%;
+        margin-top: 1rem;
+
+        // text-align: center;
+        > .card-title {
+          word-wrap: wrap;
+          font-size: 14px;
+        }
+        > .card-btn {
+          // flex-direction: row;
+          align-items: center;
+          gap: 0.5rem;
+          > .remove-btn.btn {
+            width: 50%;
+            height: 30px;
+            font-size: 12px;
+          }
+          > .move-btn.btn {
+            width: 50%;
+            height: 30px;
+            font-size: 12px;
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
 }

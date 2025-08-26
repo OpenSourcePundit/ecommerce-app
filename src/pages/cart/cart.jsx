@@ -8,7 +8,7 @@ import { DataContext } from '../../Contexts/dataContext';
 
 export const Cart = () => {
 
-const {cart, dataDispatch} = useContext(DataContext);
+const {cart, dataDispatch,cartLength} = useContext(DataContext);
   
 
 
@@ -44,7 +44,7 @@ const {cart, dataDispatch} = useContext(DataContext);
   return (
     cart.length >= 1 ? (
       <div className='cart-container'>
-        <div className="cart-title" ><p>Cart <span>{cart.length}</span></p></div>
+        <div className="cart-title" ><p>Cart : <span>{cartLength}</span></p></div>
         <div className="cart-main-container">
             <div className="cart-cards">
             {
@@ -54,7 +54,7 @@ const {cart, dataDispatch} = useContext(DataContext);
             }
             </div>
             <div className="price-section">
-              <h2>Price Details</h2>
+              <div className='price-section-heading'>Price Details</div>
             {
               cart.map(({_id, title, price, qty})=>{
                 return(
@@ -82,7 +82,7 @@ const {cart, dataDispatch} = useContext(DataContext);
             </div>
 
             <div className="checkout">
-              <button className='checkBtn'>Checkout</button>  
+              <button className='checkBtn btn'>Checkout</button>  
             </div> 
 
             </div>

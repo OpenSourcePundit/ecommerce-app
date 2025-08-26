@@ -14,7 +14,7 @@ export const dataReducer = (state, {type, payload})=>{
        //     return {...state, cartLength:cartLength+1, cart:[...state.cart, payload]};
        
        case "fetch_cart":
-           return {...state, cart:[...payload], cartLength: payload.length }
+           return {...state, cart:[...payload], cartLength: payload?.reduce((acc,curr)=>acc+curr.qty,0)}
        
            case "fetch_wishlist":
            return {...state, wishlist:[...payload], wishlistLength: payload.length }
@@ -56,7 +56,7 @@ export const dataReducer = (state, {type, payload})=>{
        }
        case "handleCart":
            return{
-               ...state, cart:[...payload], cartLength: payload.length
+               ...state, cart:[...payload], cartLength: payload?.reduce((acc,curr)=>acc+curr.qty,0)
            }
    
        case "handleWishlist":
