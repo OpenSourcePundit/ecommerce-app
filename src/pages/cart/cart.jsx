@@ -76,7 +76,7 @@ const {cart, dataDispatch,cartLength} = useContext(DataContext);
               <p className='dis1'>Total Price</p>
               <p className='number'> ₹{' '}
               {
-                cart.reduce((total, acc)=> total + acc.newPrice * acc.qty, 0)
+                Math.floor(cart.reduce((total, acc)=> total + acc.newPrice * acc.qty, 0))
               }
               </p>
             </div>
