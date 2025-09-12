@@ -96,7 +96,7 @@ export const ProductFilter = () => {
                   name="checkbox"
                   value={categoryName}
                   checked={activeFilterCategory.includes(categoryName)}
-                  onClick={() => categoryHandler(categoryName)}
+                  onChange={() => categoryHandler(categoryName)}
                 />
                 {categoryName}
               </label>
@@ -115,7 +115,7 @@ export const ProductFilter = () => {
                     type="radio"
                     name="rating1"
                     value={rate}
-                    checked={rating == rate}
+                    checked={Number(rating) === rate}
                     onChange={(e) =>
                       dataDispatch({
                         type: "filterRating",

@@ -15,7 +15,6 @@ const {cart, dataDispatch,cartLength} = useContext(DataContext);
 
   const getData = async() =>{
     const token = localStorage.getItem("encodedToken");
-    console.log(cart);
     try{
         const response = await fetch("/api/user/cart",{
           method: "GET",
@@ -24,7 +23,6 @@ const {cart, dataDispatch,cartLength} = useContext(DataContext);
           }
         })
         const result =  await response.json();
-        console.log(result);
         dataDispatch({
           type:"updateCart",
           payload: result.cart

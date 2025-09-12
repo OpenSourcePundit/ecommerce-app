@@ -30,7 +30,7 @@ export function Navbar() {
       <nav className="navbar">
         <div className="logo">
           <Link to="/">
-            <img src={logo} alt="bibliotec" srcset="" />
+            <img src={logo} alt="bibliotec" srcSet="" />
           </Link>
         </div>
         <div className="searchbox">

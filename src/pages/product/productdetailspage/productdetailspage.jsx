@@ -78,7 +78,6 @@ export const ProductDetailsPage = () => {
             type: "handleWishlist",
             payload: result1.wishlist,
           })
-          console.log("wishlist", wishlist, "productid", product._id );
         } catch (error) {
           console.log(error);
         }

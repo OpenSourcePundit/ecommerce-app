@@ -306,7 +306,7 @@ export const products = [
     fastDelivery:true,
     categoryName: "Fantasy"
   },
-  {
+/*  {
     _id: 21,
     title: "Atomic Habits",
     image: "https://i.ibb.co/VBqFkfT/21-Atomic-Habits-James-Clear.jpg",
@@ -905,5 +905,5 @@ export const products = [
     cashOnDelivery: true,
     fastDelivery: true,
     categoryName: "Self-Help"
-  }
+  }*/
 ];

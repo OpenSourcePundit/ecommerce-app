@@ -13,7 +13,6 @@ export const SingleCartCard = ({card, index}) => {
     const {_id, title, author, image, price, newPrice, discount, qty} = card;
 
     const isInWishlist = wishlist.some((item)=> item._id === card._id);
-    console.log("isInWishlist",isInWishlist);
 
 
     const handleQty = async(e, card) => {
@@ -99,7 +98,6 @@ export const SingleCartCard = ({card, index}) => {
            });
            // saving the encodedToken in the localStorage
            const result = await response.json();
-           console.log("move to wishlist cart result",result.cart);
            dataDispatch({
              type: "handleCart",
              payload: result.cart,
