@@ -168,7 +168,7 @@ export const ProductListingPage = () => {
           </div>
           <div className="product-container">
             {finalData?.map((prod, index) => {
-              return <ProductCard prod={prod} index={index} />;
+              return <ProductCard prod={prod} index={index} key={prod._id} />;
             })}
           </div>
         </div>

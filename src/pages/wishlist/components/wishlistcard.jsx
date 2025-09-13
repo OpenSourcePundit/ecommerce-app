@@ -25,7 +25,6 @@ const SingleWishlistCard = ({ card, index, setLoading }) => {
       });
       // saving the encodedToken in the localStorage
       const result = await response.json();
-      console.log(result.cart);
       dataDispatch({
         type: "handleWishlist",
         payload: result.wishlist,

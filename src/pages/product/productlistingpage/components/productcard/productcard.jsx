@@ -30,6 +30,7 @@ export const ProductCard = ({ prod }) => {
     discount,
     rating,
     Language,
+    categoryName,
   } = prod;
 
   const handleAddCart = async (e,prod) => {
@@ -51,7 +52,6 @@ export const ProductCard = ({ prod }) => {
       });
       // saving the encodedToken in the localStorage
       result = await response.json();
-      console.log("result",result.cart);
       dataDispatch({
         type: "handleCart",
         payload: result.cart,
@@ -87,7 +87,6 @@ export const ProductCard = ({ prod }) => {
         type: "handleWishlist",
         payload: result1.wishlist,
       });
-      console.log("wishlist", wishlist, "productid", prod._id);
     } catch (error) {
       console.log(error);
     }}else{
@@ -97,35 +96,35 @@ export const ProductCard = ({ prod }) => {
 
   return (
     // <div className="container">
-    <div className="card" onClick={()=>navigate(`./${_id}`)}>
+    <div className="card" key={_id} onClick={()=>navigate(`./${_id}`)}>
       <div className="img" >
-        <img src={prod.image} alt="" width="auto" height="auto" />
+        <img src={image} alt="" width="auto" height="auto" />
       </div>
       <div className="content">
         <div className="review-container">
           <div className="stars">
             {/* <span>Reviews</span> */}
             {[1, 2, 3, 4, 5].map((i) =>
-              i <= prod.rating ? (
-                <FontAwesomeIcon icon={faStar} style={{ color: "#ff5e00ff" }} />
+              i <= rating ? (
+                <FontAwesomeIcon key={i} icon={faStar} style={{ color: "#ff5e00ff" }} />
               ) : (
-                <FontAwesomeIcon icon={faStar}  />
+                <FontAwesomeIcon key={i} icon={faStar}  />
               )
             )}
           </div>
         </div>
         
-        <div className="name">{prod.title}</div>
+        <div className="name">{title}</div>
         <div className="price">
-          <span className="new-price"> &#8377;{prod.newPrice}</span>
+          <span className="new-price"> &#8377;{newPrice}</span>
           &nbsp;
-          <span className="actual-price"> &#8377;{prod.price}</span>
+          <span className="actual-price"> &#8377;{price}</span>
 
         </div>
         <div className="description">
-          <p><span>Author :</span> {prod.author}</p>
-          <p><span>Category :</span> {prod.categoryName}</p>
-          <p><span>Language :</span> {prod.Language}</p>
+          <p><span>Author :</span> {author}</p>
+          <p><span>Category :</span> {categoryName}</p>
+          <p><span>Language :</span> {Language}</p>
         </div>
       </div>
       <div className="button-container">

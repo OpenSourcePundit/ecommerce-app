@@ -7,7 +7,8 @@ import { TbLogout } from "react-icons/tb";
 import { CgProfile } from "react-icons/cg";
 import "./profile.scss";
 import { DataContext } from "../../Contexts/dataContext";
-import { AuthContext } from "../../Contexts/authcontext/authcontext";
+import { AuthContext } from "../../Contexts/authcontext/authcontext"
+import profileIcon from "../../assets/icons/profile-icon.avif"
 
 export const Profile = () => {
   const { dataDispatch, address } = useContext(DataContext);
@@ -84,7 +85,7 @@ export const Profile = () => {
     <div className="container">
       {editAddress && (
         <div className="address-container">
-          <p className="address-container-heading">Add New Address</p>
+          <p className="address-container-heading">Address</p>
           <div className="address">
             {Object.keys(formData).map((field) => (
               <React.Fragment key={field}>
@@ -133,7 +134,7 @@ export const Profile = () => {
         <div className="image-section">
           <div className="image-container">
             <img
-              src="https://i.ibb.co/d5tcPjt/profile.png"
+              src={profileIcon}
               alt="logo"
               width="30"
               height="30"

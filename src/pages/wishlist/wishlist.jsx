@@ -13,7 +13,6 @@ export const Wishlist = () => {
     const {setIsLogIn} = useContext(AuthContext);
     const [isLoading,setIsLoading] = React.useState(false);
 
-    console.log("wishList Main",wishlist);
     
     if(localStorage.getItem("encodedToken")!=undefined){setIsLogIn(true)}
   

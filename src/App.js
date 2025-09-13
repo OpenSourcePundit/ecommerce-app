@@ -17,7 +17,7 @@ import {Footer} from "./components/footer/footer.jsx";
 import {ProductListingPage} from "./pages/product/productlistingpage/productlistingpage";
 import {ProductDetailsPage } from "./pages/product/productdetailspage/productdetailspage";
 import {Profile} from "./pages/profile/profile";
-import {AuthContext} from "./Contexts/authcontext/authcontext"
+import {AuthContext} from "./Contexts/authcontext/authcontext";
 
 function App() {
 
@@ -36,7 +36,9 @@ function App() {
       
        <LoadingFallBack isLoading={isLoading}>
          <Navbar/>
+         
        <Routes>
+        
           <Route path="/" element={<HomePage/>}/>
           <Route path="/products" element={<ProductListingPage/>}/>
           <Route path="/products/:productId" element={<ProductDetailsPage/>}/>
@@ -46,7 +48,9 @@ function App() {
           <Route path="/login" element={   <Login />} />
           <Route path="/wishlist"  element={   <RequiresAuth isLogIn={isLogIn}>   <Wishlist/> </RequiresAuth> } />
           <Route path="/profile" element={  <RequiresAuth isLogIn={isLogIn}>  <Profile /> </RequiresAuth>  } />
+         
        </Routes>
+        
        <Footer/>
        </LoadingFallBack>
     </div>
