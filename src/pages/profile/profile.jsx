@@ -85,7 +85,7 @@ export const Profile = () => {
     <div className="container">
       {editAddress && (
         <div className="address-container">
-          <p className="address-container-heading">Add New Address</p>
+          <p className="address-container-heading">Address</p>
           <div className="address">
             {Object.keys(formData).map((field) => (
               <React.Fragment key={field}>
