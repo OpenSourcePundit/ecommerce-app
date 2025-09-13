@@ -38,6 +38,10 @@
         font-size: 18px;
         padding: 0.3rem 0;
         font-weight: 500;
+        max-width: 100%;
+   text-overflow: ellipsis;
+  overflow: hidden;
+  white-space:nowrap;
       }
       > .cart-author {
         color: #212121;

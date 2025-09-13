@@ -17,7 +17,11 @@
     font-size: 20px;
     text-transform: uppercase;
     text-align: center;
-    padding-top: 1rem;
+    padding-top: 1rem;    
+  max-width: 100%;
+   text-overflow: ellipsis;
+  overflow: hidden;
+  white-space:nowrap;
   }
 
   > .cart-main-container {
