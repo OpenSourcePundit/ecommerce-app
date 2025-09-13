@@ -19,7 +19,7 @@ export const Profile = () => {
   const [isEdit, setIsEdit] = useState({ status: false, index: null });
 
   const [formData, setFormData] = useState({
-    Add_name: "",
+    Name: "",
     Hno: "",
     street: "",
     city: "",
@@ -41,7 +41,7 @@ export const Profile = () => {
       setFormData({ ...current });
     } else {
       setFormData({
-        Add_name: "",
+        Name: "",
         Hno: "",
         street: "",
         city: "",
@@ -165,7 +165,7 @@ export const Profile = () => {
               {address.map((addr, index) => (
                 <div className="address" key={index}>
                   <div className="home">
-                    <p>{addr.Add_name},</p>
+                    <p>{addr.Name},</p>
                     <p>
                       {addr.Hno}, {addr.street}
                     </p>

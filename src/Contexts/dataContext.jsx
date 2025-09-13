@@ -18,7 +18,7 @@ export const DataProvider = ({children})=>{
         search: "",
         filterCategory:["Fiction", "Non-Fiction", "Mystery","Fantasy"],
         activeFilterCategory: [],
-        address:[{Add_name:"Shashank", Hno:"11/B", street:"AzadNagar", city:"Etawah", state:"Uttar pradesh", Pin:"206242", Phone:"8130221540"}]
+        address:[{Name:"Shashank", Hno:"11/B", street:"AzadNagar", city:"Etawah", state:"Uttar pradesh", Pin:"206242", Phone:"8130221540"}]
       };
       const [state, dispatch] = useReducer(dataReducer, initialState);
       
